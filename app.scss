@@ -1,0 +1,576 @@
+html,body {
+margin:0;
+padding:0;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+//end meyer css
+
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto+Condensed:300,400,700');
+//VARIABLES
+
+
+$font-light-color: white;
+$font-medium-color: #A9B4C0;
+$font-dark-color: rgba(60, 60, 60, 0.9);
+
+$font-headers: 'Playfair Display', serif;
+$font-content: 'Roboto Condensed', sans-serif;
+$font-buttons: 'Roboto Condensed', sans-serif;
+$button-font-weight: 100;
+$button-letter-spacing: 1px;
+
+$button-font-size: 14px;
+
+$light-page-background-color: white;
+$tan: rgba(243, 233, 210, .9);
+$gray: rgba(43, 45, 66, .9);
+// #352D39; #544E61
+
+h3 {
+    font-family: $font-content;
+    font-size: 14px;
+    color: rgba(80, 80, 80, .9);
+    letter-spacing: .5px;
+    font-weight: 100;
+}
+
+// h4 {
+//   font-family: $font-content;
+// }
+
+// h6 {
+//   font-size: 15px;
+//   font-family: $font-content;
+// }
+
+// p {
+//   font-size: 13px;
+//   font-weight: 300;
+//   line-height: 15px;
+//   font-family: $font-content;
+// }
+
+.no-text-decoration {
+  color: white;
+}
+
+hr {
+  color: $font-dark-color;
+}
+
+//MIXINS -----------------------------------
+//BUTTON MIXINS ----------------------------
+
+@mixin green-ghost-button {
+ border-radius: 5px;
+ color: $green;
+ background-color: transparent;
+ border: 2px solid $green;
+ width: 125px;
+ font-family: $font-buttons;
+ font-size: $button-font-size;
+ text-transform: uppercase;
+ padding: 10px 15px;
+ letter-spacing: $button-letter-spacing;
+   &:hover {
+     color: white;
+     background-color: $green;
+   }
+ @content;
+}
+
+@mixin tan-button {
+  background-color: $tan;
+  width: 300px;
+  padding: 10px;
+  box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
+ border-radius: 5px;
+ color: $font-dark-color;
+ width: 125px;
+ font-family: $font-buttons;
+ font-size: $button-font-size;
+ text-transform: uppercase;
+ padding: 10px 15px;
+ letter-spacing: $button-letter-spacing;
+   &:hover {
+    opacity: .7;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+   }
+ @content;
+}
+
+//MIXINS FLEXBOX
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+@content;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+      -ms-flex: $values;
+          flex: $values;
+@content;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+@content;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+@content;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+@content;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+     -moz-box-ordinal-group: $val;
+         -ms-flex-order: $val;
+          -webkit-order: $val;
+            order: $val;
+@content;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+@content;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+@content;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+     -moz-flex-basis: $width;
+      -ms-flex-basis: $width;
+          flex-basis: $width;
+@content;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+@content;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+@content;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+@content;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+  @content;
+}
+
+//RESPONSIVE DESIGN MIXINS ------------------------
+
+@mixin xs {
+  @media only screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+//smartphones, small tablets, landscape iPhone
+@mixin sm {
+  @media only screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+//portrait tablets
+@mixin md {
+  @media only screen and (min-width: 641px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+//landscape iPad, low res laptops and desktops
+@mixin lg {
+  @media only screen and (min-width: 961px) {
+    @content;
+  }
+}
+
+//big landscape tablets, laptops, desktops
+@mixin xl {
+  @media only screen and (min-width: 1026px) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media only screen and (min-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin custom($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+//-------------------------------------------
+//Navbar//
+
+nav {
+  background-color: rgba(1, 1, 1, .5);
+  position: relative;
+  z-index: 1;
+}
+
+  .navbar-logo {
+  content: url("images/Alex_logo.png");
+  height: 50px;
+  margin-left: 15px;
+  padding-bottom: 5px;
+  @include align-self(center) {
+  }
+}
+
+header {
+  background-image: url("images/plant_background_mobile.png");
+  position: absolute;
+  top: 0;
+  right: -10;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+    .tan-button {
+      @include tan-button() {
+        width: 200px;
+        margin-left: 150px;
+        position: relative;
+        z-index: 6;
+      }
+    }
+}
+
+.tan-box {
+  background-color: $tan;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  // box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
+  margin-left: 30px;
+  position: relative;
+  margin-top: -50px;
+  z-index: 4;
+  h1 {
+    font-family: $font-headers;
+    font-size: 20px;
+    font-weight: 400;
+    color: $font-dark-color;
+    letter-spacing: 1.5px;
+  }
+}
+
+.banner-text {
+  width: 300px;
+  padding: 10px;
+  margin-left: 30px;
+  position: relative;
+  z-index: 7;
+}
+
+.snake-img {
+  content: url("images/snake.png");
+  padding-top: 5px;
+  width: 65%;
+}
+
+.bear-img {
+  content: url("images/bear.png");
+  top: 275px;
+  right: 0;
+  position: absolute;
+  z-index: 5;
+  width: 65%;
+  overflow: hidden;
+}
+
+.elephant-img {
+  content: url("images/elephant.png");
+  padding-top: -100px;
+  width: 65%;
+}
+
+.mobile-dropdown-nav {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  height: 70px;
+  @include flexbox() {
+  }
+  @include justify-content(space-between) {
+  }
+  a {
+    @include flexbox() {
+    }
+  }
+  @include ipad {
+    height: 90px;
+  }
+}
+
+.mobile-dropdown-nav-home {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  height: 70px;
+  @include flexbox() {
+  }
+  @include justify-content(flex-end) {
+  }
+  a {
+    @include flexbox() {
+    }
+  }
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 22.5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  width: 30px;
+  content:url("images/hamburger-menu.png");
+  @include align-self(middle) {
+  }
+    @include ipad {
+      padding: 32.5px 30px 32.5px 30px;
+    }
+  }
+
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  font-family: $font-content;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display:block;
+}
+
+.mobile-banner {
+  margin: 0;
+  padding: 0;
+  height: calc(50vh - 70px);
+  background-color: rgba(1, 1, 1, .7);
+  // overflow: hidden;
+  position: relative;
+  @include flexbox() {
+  }
+  @include flex-direction(column) {
+  }
+  @include justify-content(center) {
+  }
+  @include align-content(middle) {
+  }
+  @include flex-wrap (wrap) {
+  }
+  img {
+    width: 200px;
+    @include align-self(flex-end) {
+    }
+  }
+}
+
+
+
