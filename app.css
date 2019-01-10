@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto+Condensed:300,400,700");
+html, body {
+  margin: 0;
+  padding: 0; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+strong {
+  font-weight: 700; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  color: rgba(80, 80, 80, 0.9);
+  letter-spacing: .5px;
+  font-weight: 100; }
+
+.no-text-decoration {
+  color: white; }
+
+hr {
+  color: rgba(60, 60, 60, 0.9); }
+
+nav {
+  background-color: rgba(1, 1, 1, 0.5);
+  position: relative;
+  z-index: 1; }
+
+.navbar-logo {
+  content: url("images/Alex_logo.png");
+  height: 50px;
+  margin-left: 15px;
+  padding-bottom: 5px;
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-align-self: center;
+  align-self: center; }
+
+header {
+  background-image: url("images/plant_background_mobile.png");
+  position: absolute;
+  top: 0;
+  right: -10;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  background-size: cover; }
+  header .tan-button {
+    background-color: rgba(243, 233, 210, 0.9);
+    width: 300px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.7);
+    border-radius: 5px;
+    color: rgba(60, 60, 60, 0.9);
+    width: 125px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    width: 200px;
+    margin-left: 150px;
+    position: relative;
+    z-index: 6; }
+    header .tan-button:hover {
+      opacity: .7;
+      box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3); }
+
+.tan-box {
+  background-color: rgba(243, 233, 210, 0.9);
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 30px;
+  position: relative;
+  margin-top: -50px;
+  z-index: 4; }
+  .tan-box h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(60, 60, 60, 0.9);
+    letter-spacing: 1.5px; }
+
+.banner-text {
+  width: 300px;
+  padding: 10px;
+  margin-left: 30px;
+  position: relative;
+  z-index: 7; }
+
+.snake-img {
+  content: url("images/snake.png");
+  padding-top: 5px;
+  width: 65%; }
+
+.bear-img {
+  content: url("images/bear.png");
+  top: 275px;
+  right: 0;
+  position: absolute;
+  z-index: 5;
+  width: 65%;
+  overflow: hidden; }
+
+.elephant-img {
+  content: url("images/elephant.png");
+  padding-top: -100px;
+  width: 65%; }
+
+.mobile-dropdown-nav {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  height: 70px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between; }
+  .mobile-dropdown-nav a {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; }
+  @media only screen and (min-width: 768px) {
+    .mobile-dropdown-nav {
+      height: 90px; } }
+
+.mobile-dropdown-nav-home {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  height: 70px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end; }
+  .mobile-dropdown-nav-home a {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; }
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 22.5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  width: 30px;
+  content: url("images/hamburger-menu.png");
+  -webkit-align-self: middle;
+  -moz-align-self: middle;
+  -ms-align-self: middle;
+  align-self: middle; }
+  @media only screen and (min-width: 768px) {
+    .dropbtn {
+      padding: 32.5px 30px 32.5px 30px; } }
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  font-family: "Roboto Condensed", sans-serif; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: white; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
+
+.mobile-banner {
+  margin: 0;
+  padding: 0;
+  height: calc(50vh - 70px);
+  background-color: rgba(1, 1, 1, 0.7);
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-align-content: middle;
+  -moz-align-content: middle;
+  -ms-align-content: middle;
+  align-content: middle;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .mobile-banner img {
+    width: 200px;
+    -webkit-align-self: flex-end;
+    -moz-align-self: flex-end;
+    -ms-align-self: flex-end;
+    align-self: flex-end; }
+
+/*# sourceMappingURL=app.css.map */
