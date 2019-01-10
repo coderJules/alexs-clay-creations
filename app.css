@@ -59,10 +59,32 @@ strong {
 .text-right {
   text-align: right; }
 
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #46505a;
+  letter-spacing: 3px;
+  line-height: 20px; }
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  color: #46505a;
+  letter-spacing: .5px;
+  font-weight: 400; }
+
 h3 {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 14px;
-  color: rgba(80, 80, 80, 0.9);
+  color: #46505a;
+  letter-spacing: .5px;
+  font-weight: 100; }
+
+p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  color: #46505a;
   letter-spacing: .5px;
   font-weight: 100; }
 
@@ -70,94 +92,27 @@ h3 {
   color: white; }
 
 hr {
-  color: rgba(60, 60, 60, 0.9); }
+  color: #46505a; }
 
 nav {
   background-color: rgba(1, 1, 1, 0.5);
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .navbar-logo {
-  content: url("images/Alex_logo.png");
-  height: 50px;
-  margin-left: 15px;
-  padding-bottom: 5px;
+  content: url("images/Alex_logo_text.png");
+  height: 60px;
+  margin-left: 30px;
+  padding-top: 15px;
   -webkit-align-self: center;
-  -moz-align-self: center;
   -ms-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center; }
-
-header {
-  background-image: url("images/plant_background_mobile.png");
-  position: absolute;
-  top: 0;
-  right: -10;
-  z-index: -2;
-  height: 100vh;
-  width: 100%;
-  background-size: cover; }
-  header .tan-button {
-    background-color: rgba(243, 233, 210, 0.9);
-    width: 300px;
-    padding: 10px;
-    box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.7);
-    border-radius: 5px;
-    color: rgba(60, 60, 60, 0.9);
-    width: 125px;
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    letter-spacing: 1px;
-    width: 200px;
-    margin-left: 150px;
-    position: relative;
-    z-index: 6; }
-    header .tan-button:hover {
-      opacity: .7;
-      box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3); }
-
-.tan-box {
-  background-color: rgba(243, 233, 210, 0.9);
-  width: 300px;
-  border-radius: 5px;
-  padding: 10px;
-  margin-left: 30px;
-  position: relative;
-  margin-top: -50px;
-  z-index: 4; }
-  .tan-box h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: rgba(60, 60, 60, 0.9);
-    letter-spacing: 1.5px; }
-
-.banner-text {
-  width: 300px;
-  padding: 10px;
-  margin-left: 30px;
-  position: relative;
-  z-index: 7; }
-
-.snake-img {
-  content: url("images/snake.png");
-  padding-top: 5px;
-  width: 65%; }
-
-.bear-img {
-  content: url("images/bear.png");
-  top: 275px;
-  right: 0;
-  position: absolute;
-  z-index: 5;
-  width: 65%;
-  overflow: hidden; }
-
-.elephant-img {
-  content: url("images/elephant.png");
-  padding-top: -100px;
-  width: 65%; }
 
 .mobile-dropdown-nav {
   position: relative;
@@ -165,20 +120,16 @@ header {
   background: transparent;
   height: 70px;
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
+  -webkit-box-pack: space-between;
   justify-content: space-between;
   -ms-flex-pack: space-between; }
   .mobile-dropdown-nav a {
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex; }
   @media only screen and (min-width: 768px) {
     .mobile-dropdown-nav {
@@ -190,36 +141,32 @@ header {
   background: transparent;
   height: 70px;
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
   -ms-justify-content: flex-end;
+  -webkit-box-pack: flex-end;
   justify-content: flex-end;
   -ms-flex-pack: flex-end; }
   .mobile-dropdown-nav-home a {
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex; }
 
 .dropbtn {
   background-color: transparent;
-  color: white;
-  padding: 22.5px;
+  padding: 30px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  height: 25px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   content: url("images/hamburger-menu.png");
-  -webkit-align-self: middle;
-  -moz-align-self: middle;
-  -ms-align-self: middle;
-  align-self: middle; }
+  -webkit-align-self: right;
+  -ms-align-self: right;
+  -ms-flex-item-align: right;
+  -ms-grid-row-align: right;
+  align-self: right; }
   @media only screen and (min-width: 768px) {
     .dropbtn {
       padding: 32.5px 30px 32.5px 30px; } }
@@ -239,6 +186,7 @@ header {
   position: absolute;
   background-color: white;
   min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
@@ -260,6 +208,91 @@ header {
 .show {
   display: block; }
 
+header {
+  background-image: url("images/plant_background_mobile.png");
+  position: relative;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  margin-right: -30px; }
+  header .tan-button {
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 300px;
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.7);
+    box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.7);
+    border-radius: 5px;
+    color: white;
+    width: 125px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    width: 200px;
+    margin-left: 30%;
+    position: relative;
+    z-index: 6; }
+    header .tan-button:hover {
+      opacity: .7;
+      -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
+      box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3); }
+
+.centered-box {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  top: calc(50vh - 50px);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.tan-box {
+  background-color: transparent;
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 15px;
+  position: relative;
+  margin-top: -50px;
+  z-index: 4; }
+  .tan-box h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #46505a;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 20;
+    line-height: 25px; }
+
+.banner-text {
+  width: 225px;
+  padding: 10px;
+  margin-left: 15px;
+  position: relative;
+  z-index: 10; }
+
+.snake-img {
+  content: url("images/snake.png");
+  padding-top: 5px;
+  width: 65%; }
+
+.bear-img {
+  content: url("images/bear.png");
+  top: 30vh;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  overflow-y: hidden; }
+
+.elephant-img {
+  content: url("images/elephant.png");
+  width: 65%;
+  margin-top: -75px; }
+
 .mobile-banner {
   margin: 0;
   padding: 0;
@@ -267,32 +300,149 @@ header {
   background-color: rgba(1, 1, 1, 0.7);
   position: relative;
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-justify-content: center;
   -moz-justify-content: center;
   -ms-justify-content: center;
+  -webkit-box-pack: center;
   justify-content: center;
   -ms-flex-pack: center;
-  -webkit-align-content: middle;
-  -moz-align-content: middle;
   -ms-align-content: middle;
+  -ms-flex-line-pack: middle;
   align-content: middle;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .mobile-banner img {
     width: 200px;
     -webkit-align-self: flex-end;
-    -moz-align-self: flex-end;
     -ms-align-self: flex-end;
+    -ms-flex-item-align: flex-end;
+    -ms-grid-row-align: flex-end;
     align-self: flex-end; }
+
+.page-text {
+  position: relative;
+  margin: 30px; }
+  .page-text h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center; }
+  .page-text p {
+    line-height: 17px;
+    margin-bottom: 30px; }
+
+.award-box h2 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  letter-spacing: 2px; }
+
+.alex-photo {
+  content: url("images/Alex_pic.png");
+  background-position: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 90px; }
+
+.dc-image {
+  content: url("images/DC.png");
+  width: 30%;
+  margin: 0 auto; }
+
+.local-image {
+  content: url("images/Michigan.png");
+  width: 30%;
+  margin: 0 auto; }
+
+.global-image {
+  content: url("images/Global.png");
+  width: 30%;
+  margin: 0 auto; }
+
+.portfolio-div {
+  background-image: url("images/plant_background_mobile.png");
+  position: relative;
+  z-index: 30;
+  height: 100vh;
+  width: 100%;
+  background-size: cover; }
+  .portfolio-div h1 {
+    margin-top: 20px;
+    margin-left: 20px; }
+  .portfolio-div h2 {
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: right;
+    color: white;
+    margin-bottom: 20px; }
+
+.slider {
+  /* line them up horizontally */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* allow for scrolling */
+  overflow-x: auto;
+  /* make it smooth on iOS */
+  -webkit-overflow-scrolling: touch; }
+
+.slider > div {
+  /* make sure the width is honored */
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 90vw;
+  height: 90vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.1);
+  box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.1);
+  -webkit-scroll-snap-points-x: repeat(90vw);
+  -ms-scroll-snap-points-x: repeat(90vw);
+  scroll-snap-points-x: repeat(90vw);
+  -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory; }
+
+.elephant-slide {
+  background-image: url("images/elephant.png");
+  margin: 0 auto;
+  width: 90vw;
+  padding: 30px;
+  background-position: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  .elephant-slide h3 {
+    color: red; }
+
+.slide-text {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  padding: 30px;
+  text-align: right; }
+
+.snake-slide {
+  background-image: url("images/snake.png");
+  margin: 0 auto;
+  width: 90vw;
+  padding: 30px;
+  background-position: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  .snake-slide h3 {
+    color: red; }
+
+.video {
+  content: url("images/video_icon.png");
+  width: 150px;
+  z-index: 800;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  bottom: 20px; }
 
 /*# sourceMappingURL=app.css.map */

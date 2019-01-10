@@ -71,10 +71,9 @@ strong {
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto+Condensed:300,400,700');
 //VARIABLES
 
-
 $font-light-color: white;
 $font-medium-color: #A9B4C0;
-$font-dark-color: rgba(60, 60, 60, 0.9);
+$font-dark-color: rgb(70, 80, 90);
 
 $font-headers: 'Playfair Display', serif;
 $font-content: 'Roboto Condensed', sans-serif;
@@ -87,31 +86,38 @@ $button-font-size: 14px;
 $light-page-background-color: white;
 $tan: rgba(243, 233, 210, .9);
 $gray: rgba(43, 45, 66, .9);
-// #352D39; #544E61
+
+ h1 {
+    font-family: $font-headers;
+    font-size: 18px;
+    font-weight: 400;
+    color: $font-dark-color;
+    letter-spacing: 3px;
+    line-height: 20px;
+}
+
+h2 {
+  font-family: $font-headers;
+  font-size: 14px;
+  color: $font-dark-color;
+  letter-spacing: .5px;
+  font-weight: 400;
+}
 
 h3 {
     font-family: $font-content;
     font-size: 14px;
-    color: rgba(80, 80, 80, .9);
+    color: $font-dark-color;
     letter-spacing: .5px;
     font-weight: 100;
 }
-
-// h4 {
-//   font-family: $font-content;
-// }
-
-// h6 {
-//   font-size: 15px;
-//   font-family: $font-content;
-// }
-
-// p {
-//   font-size: 13px;
-//   font-weight: 300;
-//   line-height: 15px;
-//   font-family: $font-content;
-// }
+p {
+  font-family: $font-content;
+  font-size: 14px;
+    color: $font-dark-color;
+    letter-spacing: .5px;
+    font-weight: 100;
+}
 
 .no-text-decoration {
   color: white;
@@ -143,12 +149,13 @@ hr {
 }
 
 @mixin tan-button {
-  background-color: $tan;
+  background-color: rgba(1, 1, 1, .5);
   width: 300px;
   padding: 10px;
-  box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
+  -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
+          box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
  border-radius: 5px;
- color: $font-dark-color;
+ color: white;
  width: 125px;
  font-family: $font-buttons;
  font-size: $button-font-size;
@@ -157,7 +164,8 @@ hr {
  letter-spacing: $button-letter-spacing;
    &:hover {
     opacity: .7;
-    box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+    -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+            box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
    }
  @content;
 }
@@ -166,9 +174,7 @@ hr {
 
 @mixin flexbox() {
   display: -webkit-box;
-  display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
 @content;
 }
@@ -178,8 +184,6 @@ hr {
 // <positive-number>, initial, auto, or none
 @mixin flex($values) {
   -webkit-box-flex: $values;
-     -moz-box-flex: $values;
-      -webkit-flex: $values;
       -ms-flex: $values;
           flex: $values;
 @content;
@@ -189,9 +193,10 @@ hr {
 // - applies to: flex containers
 // row | row-reverse | column | column-reverse
 @mixin flex-direction($direction) {
-  -webkit-flex-direction: $direction;
-     -moz-flex-direction: $direction;
-      -ms-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+   -ms-flex-direction: $direction;
+       -webkit-box-orient: vertical;
+       -webkit-box-direction: normal;
           flex-direction: $direction;
 @content;
 }
@@ -200,10 +205,8 @@ hr {
 // - applies to: flex containers
 // nowrap | wrap | wrap-reverse
 @mixin flex-wrap($wrap) {
-  -webkit-flex-wrap: $wrap;
-     -moz-flex-wrap: $wrap;
-      -ms-flex-wrap: $wrap;
-          flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+      flex-wrap: $wrap;
 @content;
 }
 
@@ -211,9 +214,9 @@ hr {
 // - applies to: flex containers
 // <flex-direction> || <flex-wrap>
 @mixin flex-flow($flow) {
-  -webkit-flex-flow: $flow;
-     -moz-flex-flow: $flow;
-      -ms-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
           flex-flow: $flow;
 @content;
 }
@@ -223,9 +226,7 @@ hr {
 // <integer>
 @mixin order($val) {
   -webkit-box-ordinal-group: $val;
-     -moz-box-ordinal-group: $val;
          -ms-flex-order: $val;
-          -webkit-order: $val;
             order: $val;
 @content;
 }
@@ -234,9 +235,10 @@ hr {
 // - applies to: flex items
 // <number>
 @mixin flex-grow($grow) {
-  -webkit-flex-grow: $grow;
-     -moz-flex-grow: $grow;
-      -ms-flex-grow: $grow;
+  -moz-flex-grow: $grow;
+   -ms-flex-grow: $grow;
+       -webkit-box-flex: $grow;
+           -ms-flex-positive: $grow;
           flex-grow: $grow;
 @content;
 }
@@ -245,10 +247,9 @@ hr {
 // - applies to: flex item shrink factor
 // <number>
 @mixin flex-shrink($shrink) {
-  -webkit-flex-shrink: $shrink;
-     -moz-flex-shrink: $shrink;
-      -ms-flex-shrink: $shrink;
-          flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+      -ms-flex-negative: $shrink;
+      flex-shrink: $shrink;
 @content;
 }
 
@@ -257,10 +258,9 @@ hr {
 // - applies to: flex itemsnitial main size of the flex item
 // <width>
 @mixin flex-basis($width) {
-  -webkit-flex-basis: $width;
-     -moz-flex-basis: $width;
-      -ms-flex-basis: $width;
-          flex-basis: $width;
+  -ms-flex-basis: $width;
+      -ms-flex-preferred-size: $width;
+      flex-basis: $width;
 @content;
 }
 
@@ -268,9 +268,9 @@ hr {
 // - applies to: flex containers
 // flex-start | flex-end | center | space-between | space-around
 @mixin justify-content($justify) {
-  -webkit-justify-content: $justify;
-     -moz-justify-content: $justify;
-      -ms-justify-content: $justify;
+  -moz-justify-content: $justify;
+   -ms-justify-content: $justify;
+       -webkit-box-pack: $justify;
           justify-content: $justify;
             -ms-flex-pack: $justify;
 @content;
@@ -280,10 +280,9 @@ hr {
 // - applies to: multi-line flex containers
 // flex-start | flex-end | center | space-between | space-around | stretch
 @mixin align-content($align) {
-  -webkit-align-content: $align;
-     -moz-align-content: $align;
-      -ms-align-content: $align;
-          align-content: $align;
+  -ms-align-content: $align;
+      -ms-flex-line-pack: $align;
+      align-content: $align;
 @content;
 }
 
@@ -291,9 +290,10 @@ hr {
 // - applies to: flex containers
 // flex-start | flex-end | center | baseline | stretch
 @mixin align-items($align) {
-  -webkit-align-items: $align;
-     -moz-align-items: $align;
-      -ms-align-items: $align;
+  -moz-align-items: $align;
+   -ms-align-items: $align;
+       -webkit-box-align: $align;
+           -ms-flex-align: $align;
           align-items: $align;
 @content;
 }
@@ -303,9 +303,10 @@ hr {
 // auto | flex-start | flex-end | center | baseline | stretch
 @mixin align-self($align) {
   -webkit-align-self: $align;
-     -moz-align-self: $align;
       -ms-align-self: $align;
-          align-self: $align;
+          -ms-flex-item-align: $align;
+      -ms-grid-row-align: $align;
+      align-self: $align;
   @content;
 }
 
@@ -376,83 +377,18 @@ nav {
   background-color: rgba(1, 1, 1, .5);
   position: relative;
   z-index: 1;
+  height: 90px;
+  @include flexbox() {
+  }
 }
 
   .navbar-logo {
-  content: url("images/Alex_logo.png");
-  height: 50px;
-  margin-left: 15px;
-  padding-bottom: 5px;
+  content: url("images/Alex_logo_text.png");
+  height: 60px;
+  margin-left: 30px;
+  padding-top: 15px;
   @include align-self(center) {
   }
-}
-
-header {
-  background-image: url("images/plant_background_mobile.png");
-  position: absolute;
-  top: 0;
-  right: -10;
-  z-index: -2;
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-    .tan-button {
-      @include tan-button() {
-        width: 200px;
-        margin-left: 150px;
-        position: relative;
-        z-index: 6;
-      }
-    }
-}
-
-.tan-box {
-  background-color: $tan;
-  width: 300px;
-  border-radius: 5px;
-  padding: 10px;
-  // box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
-  margin-left: 30px;
-  position: relative;
-  margin-top: -50px;
-  z-index: 4;
-  h1 {
-    font-family: $font-headers;
-    font-size: 20px;
-    font-weight: 400;
-    color: $font-dark-color;
-    letter-spacing: 1.5px;
-  }
-}
-
-.banner-text {
-  width: 300px;
-  padding: 10px;
-  margin-left: 30px;
-  position: relative;
-  z-index: 7;
-}
-
-.snake-img {
-  content: url("images/snake.png");
-  padding-top: 5px;
-  width: 65%;
-}
-
-.bear-img {
-  content: url("images/bear.png");
-  top: 275px;
-  right: 0;
-  position: absolute;
-  z-index: 5;
-  width: 65%;
-  overflow: hidden;
-}
-
-.elephant-img {
-  content: url("images/elephant.png");
-  padding-top: -100px;
-  width: 65%;
 }
 
 .mobile-dropdown-nav {
@@ -490,15 +426,14 @@ header {
 
 .dropbtn {
   background-color: transparent;
-  color: white;
-  padding: 22.5px;
+  padding: 30px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  height: 25px;
-  width: 30px;
+  height: 30px;
+  width: 40px;
   content:url("images/hamburger-menu.png");
-  @include align-self(middle) {
+  @include align-self(right) {
   }
     @include ipad {
       padding: 32.5px 30px 32.5px 30px;
@@ -523,7 +458,8 @@ header {
   position: absolute;
   background-color: white;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 0;
   font-family: $font-content;
@@ -546,6 +482,86 @@ header {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display:block;
+}
+
+header {
+  background-image: url("images/plant_background_mobile.png");
+  position: relative;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  margin-right: -30px;
+    .tan-button {
+      @include tan-button() {
+        width: 200px;
+        margin-left: 30%;
+        position: relative;
+        z-index: 6;
+      }
+    }
+}
+
+.centered-box {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  top: calc(50vh - 50px);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.tan-box {
+  background-color: transparent;
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px;
+  // box-shadow: 1px 1px 3px rgba(1, 1, 1, .7);
+  margin-left: 15px;
+  position: relative;
+  margin-top: -50px;
+  z-index: 4;
+  h1 {
+    font-family: $font-headers;
+    font-size: 28px;
+    font-weight: 400;
+    color: $font-dark-color;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 20;
+    line-height: 25px;
+  }
+}
+
+.banner-text {
+  width: 225px;
+  padding: 10px;
+  margin-left: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.snake-img {
+  content: url("images/snake.png");
+  padding-top: 5px;
+  width: 65%;
+}
+
+.bear-img {
+  content: url("images/bear.png");
+  top: 30vh;
+  right: 0;
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  overflow-y: hidden;
+}
+
+.elephant-img {
+  content: url("images/elephant.png");
+  width: 65%;
+  margin-top: -75px;
 }
 
 .mobile-banner {
@@ -572,5 +588,147 @@ header {
   }
 }
 
+.page-text {
+  position: relative;
+  margin: 30px;
+  h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+  p {
+    line-height: 17px;
+    margin-bottom: 30px;
+  }
+}
 
+.award-box {
+  h2 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    letter-spacing: 2px;
+  }
+}
+
+.alex-photo {
+  content: url("images/Alex_pic.png");
+  background-position: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 90px;
+}
+
+.dc-image {
+  content: url("images/DC.png");
+  width: 30%;
+  margin: 0 auto;
+}
+
+.local-image {
+  content: url("images/Michigan.png");
+  width: 30%;
+  margin: 0 auto;
+}
+
+.global-image {
+  content: url("images/Global.png");
+  width: 30%;
+  margin: 0 auto;
+}
+
+//PORTFOLIO SECTION--------------------
+.portfolio-div {
+  background-image: url("images/plant_background_mobile.png");
+  position: relative;
+  z-index: 30;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  h1 {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  h2 {
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: right;
+    color: white;
+    margin-bottom: 20px;
+  }
+}
+
+.slider {
+  /* line them up horizontally */
+  @include flexbox() {
+  }
+
+  /* allow for scrolling */
+  overflow-x: auto;
+
+  /* make it smooth on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+.slider > div {
+  /* make sure the width is honored */
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 90vw;
+  height: 90vw;
+  background-color: rgba(255, 255 ,255, .7);
+  -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
+          box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
+  -webkit-scroll-snap-points-x: repeat(90vw);
+      -ms-scroll-snap-points-x: repeat(90vw);
+          scroll-snap-points-x: repeat(90vw);
+  -webkit-scroll-snap-type: mandatory;
+      -ms-scroll-snap-type: mandatory;
+          scroll-snap-type: mandatory;
+}
+
+//GALLERY IMAGES-----------------------
+
+.elephant-slide {
+  background-image: url("images/elephant.png");
+  margin: 0 auto;
+  width: 90vw;
+  padding: 30px;
+  background-position: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  h3 {
+    color: red;
+  }
+}
+
+.slide-text {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    padding: 30px;
+    text-align: right;
+  }
+
+.snake-slide {
+   background-image: url("images/snake.png");
+  margin: 0 auto;
+  width: 90vw;
+  padding: 30px;
+  background-position: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  h3 {
+    color: red;
+  }
+}
+
+.video {
+  content: url("images/video_icon.png");
+  width: 150px;
+  z-index: 800;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  bottom: 20px;
+}
 
