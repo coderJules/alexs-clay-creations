@@ -127,6 +127,7 @@ nav {
   width: 100%;
   background-color: #afbf8c;
   height: 90px;
+  -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3);
   box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,9 +141,6 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  @media only screen and (min-width: 768px) {
-    .mobile-dropdown-nav {
-      height: 90px; } }
 
 .mobile-dropdown-nav-home {
   position: relative;
@@ -178,7 +176,7 @@ nav {
   align-self: right; }
   @media only screen and (min-width: 768px) {
     .dropbtn {
-      padding: 32.5px 30px 32.5px 30px; } }
+      padding: 30px 30px 30px 30px; } }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
@@ -261,6 +259,9 @@ header {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+  @media only screen and (min-width: 768px) {
+    .centered-box {
+      padding: 90px; } }
 
 .tan-box {
   background-color: transparent;
@@ -280,6 +281,9 @@ header {
     position: relative;
     z-index: 20;
     line-height: 25px; }
+    @media only screen and (min-width: 768px) {
+      .tan-box h1 {
+        font-size: 36px; } }
 
 .banner-text {
   width: 225px;
@@ -287,11 +291,20 @@ header {
   margin-left: 15px;
   position: relative;
   z-index: 10; }
+  @media only screen and (min-width: 768px) {
+    .banner-text {
+      font-size: 18px;
+      width: 350px; } }
 
 .snake-img {
   content: url("images/snake.png");
   margin-bottom: -40px;
   width: 65%; }
+  @media only screen and (min-width: 768px) {
+    .snake-img {
+      content: url("images/snake_ipad.png");
+      width: 45%;
+      margin-bottom: 40px; } }
 
 .bear-img {
   content: url("images/bear.png");
@@ -301,11 +314,19 @@ header {
   z-index: 2;
   width: 50%;
   overflow-y: hidden; }
+  @media only screen and (min-width: 768px) {
+    .bear-img {
+      width: 30%; } }
 
 .elephant-img {
   content: url("images/elephant.png");
   width: 65%;
   margin-top: -45px; }
+  @media only screen and (min-width: 768px) {
+    .elephant-img {
+      content: url("images/elephant_ipad.png");
+      width: 45%;
+      margin-top: 0; } }
 
 .mobile-banner {
   margin: 0;
@@ -341,7 +362,7 @@ header {
 
 .page-text {
   position: relative;
-  margin: 30px; }
+  padding: 30px; }
   .page-text h1 {
     margin-bottom: 30px;
     margin-top: 30px;
@@ -350,6 +371,9 @@ header {
   .page-text p {
     line-height: 17px;
     margin-bottom: 30px; }
+  @media only screen and (min-width: 768px) {
+    .page-text {
+      padding: 90px; } }
 
 .award-box h2 {
   margin-bottom: 15px;
@@ -410,6 +434,10 @@ header {
   .portfolio-div p {
     font-family: 'Special Elite', cursive;
     font-size: 12px; }
+  @media only screen and (min-width: 768px) {
+    .portfolio-div {
+      padding: 90px;
+      width: auto; } }
 
 .slider {
   /* line them up horizontally */
@@ -437,6 +465,10 @@ header {
   -webkit-scroll-snap-type: mandatory;
   -ms-scroll-snap-type: mandatory;
   scroll-snap-type: mandatory; }
+  @media only screen and (min-width: 768px) {
+    .slider > div {
+      width: 60vw;
+      height: 60vw; } }
 
 .slide-info-div {
   -webkit-align-self: middle;
@@ -483,6 +515,9 @@ header {
   position: relative;
   margin-top: 15px;
   margin-left: 20px; }
+  @media only screen and (min-width: 768px) {
+    .video {
+      margin-left: 0; } }
 
 .squirrel-slide {
   background-image: url("images/squirrel.png");
@@ -550,6 +585,9 @@ header {
 
 h1.map-h2 {
   margin-top: 60px; }
+  @media only screen and (min-width: 768px) {
+    h1.map-h2 {
+      margin-top: 0; } }
 
 h2.map-h2 {
   margin-bottom: 15px; }
@@ -570,6 +608,9 @@ footer {
     color: lightgray; }
   footer ul li:last-of-type h2 {
     padding-bottom: 0; }
+  @media only screen and (min-width: 768px) {
+    footer {
+      height: 190px; } }
 
 .footer-div {
   padding: 20px;
@@ -581,6 +622,9 @@ footer {
   -webkit-box-pack: space-around;
   justify-content: space-around;
   -ms-flex-pack: space-around; }
+  @media only screen and (min-width: 768px) {
+    .footer-div {
+      padding: 30px 90px; } }
 
 .second-nav {
   width: 75px;
