@@ -35,6 +35,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  position: relative;
+  z-index: -2000;
 }
 ol, ul {
   list-style: none;
@@ -405,18 +407,23 @@ hr {
     z-index: 302;
   }
   .navbar-logo {
-  content: url("images/Alex_logo_text.png");
+  content: url("images/twotonebull.svg");
   height: 60px;
   margin-left: 30px;
   @include align-self(center) {
+  }
+  @include xl {
+      content: url("images/cutebullpc.svg");
+      height: 70px;
+      margin-top: 30px;
   }
 }
 
 .mobile-dropdown-nav {
   position: relative;
   width: 100%;
-  background-color: rgb(175, 191, 140);
-  height: 90px;
+  background-color: rgba(1, 1, 1, .7);
+  height: 80px;
   -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
           box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
   @include flexbox() {
@@ -426,6 +433,10 @@ hr {
   a {
     @include flexbox() {
     }
+  }
+  @include xl {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -457,6 +468,9 @@ hr {
   }
     @include ipad {
       padding: 30px 30px 30px 30px;
+    }
+    @include xl {
+      display: none;
     }
   }
 
@@ -512,16 +526,13 @@ header {
   width: 100%;
   background-size: cover;
   margin-right: -30px;
-    .tan-button {
-      @include tan-button() {
-        width: 200px;
-        margin-left: 30%;
-        position: relative;
-        z-index: 6;
-      }
-    }
     @include ipad {
-
+      background-image: none;
+      height: calc(66vh - 90px);
+      margin-right: 0;
+    }
+    @include xl {
+      height: calc(100vh - 90px);
     }
 }
 
@@ -540,6 +551,9 @@ header {
           transform: translateY(-50%);
     @include ipad {
       padding: 90px;
+    }
+    @include xl {
+      display: none;
     }
 }
 
@@ -563,9 +577,108 @@ header {
     z-index: 20;
     line-height: 25px;
     @include ipad {
-      font-size: 36px;
+      // font-size: 36px;
+      display: none;
+    }
+    @include xl {
+      display: none;
     }
   }
+}
+
+.video-div {
+  @include ipad {
+    position:relative;
+    margin-top: -90px;
+    height: 66vh;
+  }
+  @include xl {
+    height: 100vh;
+  }
+}
+.banner-video {
+  display: none;
+  @include ipad {
+    display: unset;
+    object-fit: cover;
+    width: 100%;
+    height: 66vh;
+  }
+  @include xl {
+    height: 100%;
+  }
+}
+
+.dark-overlay {
+  @include ipad {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(1, 1, 1, .5);
+  }
+  @include xl {
+    height: 100%;
+  }
+
+// background: #000000;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+opacity: .7;
+    z-index: 999;
+}
+
+.video-banner-text {
+  display: none;
+  @include ipad {
+    display: unset;
+    width: 100%;
+    height: 66vh;
+    position: absolute;
+    top: 0;
+    @include flexbox() {
+    }
+    @include align-items(center) {
+    }
+    @include justify-content(center) {
+    }
+    @include flex-wrap(wrap) {
+    }
+    z-index: 2000;
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      text-transform: uppercase;
+      font-weight: 100;
+      letter-spacing: 8.5px;
+      color: rgba(255, 255, 255, .7);
+      text-shadow: 1px 1px 3px rgba(1, 1, 1, .1);
+      // text-decoration: border rgba(1, 1, 1, 1);
+      width: 100%;
+      padding: 0 0 30px 0;
+      line-height: 48px;
+    }
+    h2 {
+      color: rgba(255, 255, 255, .5);
+      width: 40%;
+      font-size: 22px;
+      font-family: $font-content;
+      margin: 0 auto;
+      font-weight: 100;
+      line-height: 40px;
+    }
+  }
+  @include xl {
+    height: 100vh;
+  }
+}
+
+.video-banner-text > div {
+  width: 100%;
+  height: 150px;
+  text-align: center;
 }
 
 .banner-text {
@@ -575,19 +688,37 @@ header {
   position: relative;
   z-index: 10;
   @include ipad {
-    font-size: 18px;
-    width: 350px;
+    display: none;
+    // font-size: 18px;
+    // width: 350px;
+  }
+  @include xl {
+    display: none;
   }
 }
 
+.banner-image {
+  display: none;
+  @include ipad {
+  display: unset;
+  width: 700px;
+  position: relative;
+  margin-top: -175px;
+  margin-left: -150px;
+  opacity: .2;
+}
+}
+
 .snake-img {
-  content: url("images/snake.png");
   margin-bottom: -40px;
   width: 65%;
   @include ipad {
-    content: url("images/snake_ipad.png");
-    width: 45%;
-    margin-bottom: 40px;
+    display: none;
+    // width: 45%;
+    // margin-bottom: 40px;
+  }
+  @include xl {
+    display: none;
   }
 }
 
@@ -600,47 +731,28 @@ header {
   width: 50%;
   overflow-y: hidden;
     @include ipad {
-      width: 30%;
+      display: none;
+      // width: 30%;
+  }
+  @include xl {
+    display: none;
   }
 }
 
 .elephant-img {
-  content: url("images/elephant.png");
   width: 65%;
   margin-top: -45px;
   @include ipad {
-    content: url("images/elephant_ipad.png");
-    width: 45%;
-    margin-top: 0;
+    display: none;
+    // width: 45%;
+    // margin-top: 0;
   }
-}
-
-.mobile-banner {
-  margin: 0;
-  padding: 0;
-  height: calc(50vh - 70px);
-  background-color: rgba(1, 1, 1, .7);
-  // overflow: hidden;
-  position: relative;
-  @include flexbox() {
-  }
-  @include flex-direction(column) {
-  }
-  @include justify-content(center) {
-  }
-  @include align-content(middle) {
-  }
-  @include flex-wrap (wrap) {
-  }
-  img {
-    width: 200px;
-    @include align-self(flex-end) {
-    }
+  @include xl {
+    display: none;
   }
 }
 
 .page-text {
-  position: relative;
   padding: 30px;
   h1 {
     margin-bottom: 30px;
@@ -655,41 +767,201 @@ header {
   @include ipad {
     padding: 90px;
   }
+  @include xl {
+    background-image: url("images/fish2gray.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 90px 160px;
+    height: 100vh;
+    @include flexbox() {
+    }
+    @include align-items(center) {
+    }
+    @include justify-content(center) {
+    }
+  }
+}
+
+.awards-div {
+  @include xl {
+  height: 100vh;
+  padding-top: 90px;
+  background-color: whitesmoke;
+}
+}
+
+.awards-page-text {
+  @include ipad {
+    padding: 0 90px
+  }
+  @include xl {
+  background-color: whitesmoke;
+  padding: 0 90px;
+  @include flexbox() {
+  }
+  @include flex-wrap(wrap) {
+  }
+  @include justify-content(middle) {
+  }
+  @include align-items(center) {
+  }
+  position: relative;
+  height: calc(95vh - 90px);
+  margin: 0 auto;
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  p {
+    line-height: 17px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+}
+
+#about {
+  padding: 70px 0;
+  h1 {
+    font-size: 32px;
+    letter-spacing: 4px;
+    width: 100%;
+  }
+  p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @include xl {
+    @include flexbox() {
+    }
+    @include flex-wrap(wrap) {
+    }
+    @include justify-content(space-between) {
+  }
+    h1 {
+    font-size: 42px;
+    letter-spacing: 4px;
+    width: 100%;
+  }
+  p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+}
+
+.half-page-text {
+  @include xl {
+  width: 35vw;
+  padding: 0 15px;
+  position: relative;
+  @include flexbox() {
+  }
+  @include align-items(center) {
+  }
+  @include justify-content(center) {
+  }
+  p {
+    font-size: 12px;
+  }
+  }
+}
+
+.fish-gray {
+  background-image: cover;
+  position: absolute;
+  width: 800px;
+  top: 0;
+  z-index: 900;
+}
+
+
+
+#awards {
+  width: 100%;
+  @include xl {
+    font-size: 42px;
+    letter-spacing: 4px;
+    width: 100%;
+    height: 5vw;
+    text-align: center;
+  }
+}
+
+.award-text {
+  padding: 0 60px 60px 60px;
+  @include xl {
+    padding: 0 30px;
+  }
 }
 
 .award-box {
+  @include flexbox() {
+  }
+  @include flex-direction(column) {
+  }
   h2 {
     margin-bottom: 15px;
     margin-top: 15px;
     letter-spacing: 2px;
   }
+  @include xl {
+    height: 350px;
+    width: 27vw;
+    @include flex-grow(1) {
+  }
+    @include flexbox() {
+    }
+    @include flex-direction(column) {
+    }
+    @include flex-wrap(nowrap) {
+    }
+    img {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
 }
 
+
 .alex-photo {
-  content: url("images/Alex_pic.png");
+  // content: url("images/Alex_pic.png");
   background-position: center;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 90px;
+  @include xl {
+    width: 28vw;
+    margin-bottom: 0;
+  }
 }
 
 .dc-image {
-  content: url("images/DC.png");
-  width: 30%;
-  margin: 0 auto;
+    width: 30%;
+    margin: 0 auto;
+  @include xl {
+   width: 70%;
+   margin: 0 auto;
+  }
 }
 
 .local-image {
-  content: url("images/Michigan.png");
   width: 30%;
   margin: 0 auto;
+  @include xl {
+   width: 70%;
+   margin: 0 auto;
+  }
 }
 
 .global-image {
-  content: url("images/Global.png");
   width: 30%;
   margin: 0 auto;
-}
+    @include xl {
+    width: 70%;
+    margin: 0 auto;
+    }
+  }
 
 //PORTFOLIO SECTION--------------------
 .portfolio-div {
@@ -733,6 +1005,11 @@ header {
     padding: 90px;
     width: auto;
   }
+  @include xl {
+    background-image: none;
+    height: calc(100vh - 180px);
+    min-height: 620px;
+  }
 }
 
 .slider {
@@ -745,14 +1022,14 @@ header {
 
   /* make it smooth on iOS */
   -webkit-overflow-scrolling: touch;
+
 }
 .slider > div {
   /* make sure the width is honored */
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 90vw;
-  height: 90vw;
-  padding: 30px;
+  width: 100vw;
+  height: auto;
   background-color: rgba(255, 255 ,255, .7);
   -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
           box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
@@ -765,6 +1042,10 @@ header {
   @include ipad {
     width: 60vw;
     height: 60vw;
+  }
+  @include xl {
+    width: 300px;
+  height: 300px;
   }
 }
 
@@ -782,11 +1063,14 @@ header {
 //GALLERY IMAGES-----------------------
 
 .elephant-slide {
-  background-image: url("images/elephant.png");
-  margin: 0 auto;
+ z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .slide-text {
@@ -798,19 +1082,25 @@ header {
   }
 
 .snake-slide {
-  background-image: url("images/snake.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .log-slide {
-  background-image: url("images/log.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .video {
@@ -826,62 +1116,83 @@ header {
 }
 
 .squirrel-slide {
-  background-image: url("images/squirrel.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .jungle-slide {
-  background-image: url("images/jungle.png");
-  margin: 0 auto;
+ z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
   h3, p {
     color: white;
   }
 }
 
 .bear-slide {
-  background-image: url("images/bear_whole.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .cavy-slide {
-  background-image: url("images/cavy.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .rhino-slide {
-  background-image: url("images/rhino.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .camel-slide {
-  background-image: url("images/camel.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .info-slide {
-  background-image: url("images/color_swirl.png");
-  margin: 0 auto;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
   @include flexbox() {
   }
   @include justify-content(center) {
@@ -894,6 +1205,42 @@ header {
   }
 }
 
+.shop-page-text {
+  padding: 30px;
+  h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+  p {
+    line-height: 17px;
+    margin-bottom: 30px;
+  }
+  @include ipad {
+    padding: 90px;
+  }
+  @include xl {
+    background-color: whitesmoke;
+    background-image: url("images/fishswimmingdown.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 90px 160px;
+    height: 100vh;
+    @include flexbox() {
+    }
+    @include flex-direction(column) {
+    }
+    @include align-items(center) {
+    }
+    @include justify-content(center) {
+    }
+    iframe {
+      width: 50vw;
+    }
+  }
+}
+
 h1.map-h2 {
   margin-top: 60px;
   @include ipad {
@@ -903,10 +1250,13 @@ h1.map-h2 {
 
 h2.map-h2 {
   margin-bottom: 15px;
+  @include xl {
+    margin-bottom: 30px;
+  }
 }
 
 .spacer {
-  height: 15px;
+  height: 30px;
 }
 
 footer {
