@@ -26,8 +26,7 @@
   <body>
    <nav>
     <div class="mobile-dropdown-nav">
-      <a href="index.html"><div class="navbar-logo"></div></a>
-      <div class="dropdown">
+       <div class="dropdown">
         <div class="dropbtn" onclick="myFunction()"></div>
           <div id="myDropdownHome" class="dropdown-content">
             <a href="#about">About</a>
@@ -36,13 +35,19 @@
             <a href="#shop">Shop</a>
           </div>
         </div>
+      <a href="index.html"><div class="navbar-logo"></div></a>
+
       </div>
    </nav>
   <header>
     <div class="video-div">
-      <video controls="true" autoplay loop muted class="banner-video">
-      <source src="images/Alex_Fish_video.mp4" type="video/mp4">
-      </video>
+    <iframe src="https://player.vimeo.com/video/312719707?background=1" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+  </div>
+    <!-- <div class="video-div">
+      <video  autoplay loop preload="metadata"
+    class="banner-video" poster="images/Alex_video_image.jpg">
+      <source src="images/Alex_sculpts_clay_fish.mp4" type="video/mp4">
+      </video> -->
       <div class="dark-overlay">
       </div>
       <div class="video-banner-text">
@@ -86,7 +91,7 @@
           the whimsical personality of one of his pieces.</p>
         </div>
       </div>
-      <div>
+      <div class="Alex-photo-div">
       <img src="images/Alex_pic.png" class="alex-photo">
       </div>
     </div>
@@ -203,8 +208,8 @@
 </div>
 
 
-<h2>Watch Alex sculpt</h2>
-<a href="video.html"><div class="video" role="img" aria-label="video icon, clickable link to Youtube video">
+
+<a href="video.html"><div class="video-link"><h2>Watch Alex Sculpt</h2><img src="images/video_icon.png">
 </div></a>
 </div>
 
