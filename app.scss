@@ -60,9 +60,9 @@ strong {
 }
 
 .iframes {
-  padding: 20px;
-  width: calc(100vw-40px);
+  padding: 0;
   position: relative;
+  width: 100%;
 }
 
 .text-left {
@@ -86,7 +86,8 @@ strong {
 
 $font-light-color: white;
 $font-medium-color: #A9B4C0;
-$font-dark-color: rgb(70, 80, 90);
+// $font-dark-color: rgb(70, 80, 90);
+$font-dark-color: slategray;
 
 $font-headers: 'Playfair Display', serif;
 $font-content: 'Roboto Condensed', sans-serif;
@@ -104,7 +105,7 @@ $gray: rgba(43, 45, 66, .9);
     font-family: $font-headers;
     font-size: 18px;
     font-weight: 400;
-    color: $font-dark-color;
+    color: slategray;
     letter-spacing: 3px;
     line-height: 20px;
 }
@@ -363,8 +364,8 @@ hr {
 }
 
 //landscape iPad, low res laptops and desktops
-@mixin lg {
-  @media only screen and (min-width: 961px) {
+@mixin ipad-landscape {
+  @media only screen and (min-width: 961px) and (orientation: landscape) {
     @content;
   }
 }
@@ -402,37 +403,76 @@ hr {
 //-------------------------------------------
 //Navbar//
   nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 302;
   }
+
   .navbar-logo {
   position: absolute;
-  left: 30px;
+  left: 0;
   top: 15px;
   content: url("images/twotonebull.svg");
   height: 60px;
   margin-left: 30px;
   @include align-self(center) {
   }
+  @include landscape {
+    display: none;
+  }
   @include ipad {
+    display: unset;
+    left: 30px;
     content: url("images/cutebullpc.svg");
   }
   @include xl {
       content: url("images/cutebullpc.svg");
-      height: 70px;
-      margin-top: 30px;
+      height: 60px;
+      margin-top: 0;
   }
+}
+
+.transparent-color {
+  background-color: rgba(70, 80, 90, .9);
+   -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+          box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  @include landscape {
+    background-color: transparent;
+    -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
+          box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
+  }
+  @include ipad {
+    display: unset;
+    background-color: transparent;
+  }
+}
+
+.background-color {
+  background-color: rgba(70, 80, 90, .9);
+   -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+          box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  @include landscape {
+    background-color: transparent;
+    -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
+          box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
+    display: none;
+  }
+  @include ipad {
+    background-color: rgba(70, 80, 90, .9);
+  }
+}
+
+.landscape-color {
+  background-color: transparent;
 }
 
 .mobile-dropdown-nav {
   position: relative;
   width: 100%;
-  background-color: rgba(1, 1, 1, .7);
-  height: 80px;
-  -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
-          box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  height: 90px;
+  // -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  //         box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
   @include flexbox() {
   }
   @include justify-content(space-between) {
@@ -442,9 +482,11 @@ hr {
     }
   }
   @include ipad {
-    background-color: transparent;
-    box-shadow: none;
-  }
+    // background-color: transparent;
+    transition: 0.5s background-color ease;
+    -webkit-box-shadow: none;
+          box-shadow: none;
+        }
 }
 
 .dropbtn {
@@ -458,7 +500,11 @@ hr {
   content:url("images/hamburger-menu.png");
   @include align-self(right) {
   }
-
+    @include landscape {
+      background-color: rgba(70, 80, 90, .9);
+      padding: 19px 30px;
+      height: 35px;
+    }
     @include ipad {
       padding: 30px 30px 30px 30px;
     }
@@ -476,7 +522,11 @@ hr {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: absolute;
-  right: 30px;
+  right: 0;
+  @include ipad {
+    right: 30px;
+  }
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -520,13 +570,31 @@ header {
   background-size: cover;
   margin-right: -30px;
     @include ipad {
-      background-image: none;
       height: calc(66vh - 90px);
       margin-right: 0;
+    }
+     @include ipad-landscape {
+    height: calc(100vh - 70px);
     }
     @include xl {
       height: calc(100vh - 90px);
     }
+}
+
+.ipad-banner-bear {
+  display: hidden;
+  @include ipad {
+    display: unset;
+    content: url('images/bear_whole.png');
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 250px;
+    z-index: -100;
+  }
+  @include xl {
+    display: none;
+  }
 }
 
 .no-background {
@@ -564,7 +632,7 @@ header {
     font-family: $font-headers;
     font-size: 28px;
     font-weight: 400;
-    color: $font-dark-color;
+    color: slategray;
     letter-spacing: 1.5px;
     position: relative;
     z-index: 20;
@@ -583,17 +651,26 @@ header {
   display: none;
   @include ipad {
     display: unset;
-   position: fixed;
-   margin-top: -90px;
-   width: 100vw;
-   height: 66vh;
-   z-index: -1;
-   pointer-events: none;
-   overflow: hidden;
-   @include xl {
-    height: 100vh;
-   }
- }
+     position: fixed;
+     margin-top: -90px;
+     width: 100vw;
+     height: 66vh;
+     z-index: -1;
+     pointer-events: none;
+     overflow: hidden;
+     @include ipad-landscape {
+      height: 100vh;
+     }
+     @include xl {
+      height: 100vh;
+    }
+  }
+}
+
+.fade-in {
+  @include ipad {
+  opacity: 0;
+  }
 }
 
 .video-div iframe {
@@ -605,6 +682,7 @@ header {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   z-index: 3001;
 }
 
 //   @include ipad {
@@ -627,6 +705,9 @@ header {
        object-fit: cover;
     width: 100%;
     height: 66vh;
+  }
+  @include ipad-landscape {
+    height: 100vh;
   }
   @include xl {
     height: 100%;
@@ -694,7 +775,7 @@ opacity: .7;
       line-height: 40px;
     }
   }
-  @include xl {
+  @include ipad-landscape {
     height: 100vh;
   }
 }
@@ -748,6 +829,9 @@ opacity: .7;
 .snake-img {
   margin-bottom: -40px;
   width: 65%;
+  @include landscape {
+    display: none;
+  }
   @include ipad {
     display: none;
     // width: 45%;
@@ -766,6 +850,12 @@ opacity: .7;
   z-index: 2;
   width: 50%;
   overflow-y: hidden;
+  @include landscape {
+    width: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
     @include ipad {
       display: none;
       // width: 30%;
@@ -778,6 +868,9 @@ opacity: .7;
 .elephant-img {
   width: 65%;
   margin-top: -45px;
+  @include landscape {
+    display: none;
+  }
   @include ipad {
     display: none;
     // width: 45%;
@@ -796,6 +889,7 @@ opacity: .7;
     margin-top: 30px;
     font-size: 30px;
     text-align: center;
+    color: slategray !important;
   }
   p {
     line-height: 17px;
@@ -828,10 +922,10 @@ opacity: .7;
 
 .awards-div {
   background-color: whitesmoke;
-  padding-top: 90px;
+  padding: 30px 0;
   @include xl {
-  height: 70vh;
-  padding-top: 90px;
+  padding: 90px 0;
+  height: auto;
 }
 }
 
@@ -875,17 +969,27 @@ opacity: .7;
     font-size: 32px;
     letter-spacing: 4px;
     width: 100%;
+    font-family: $font-dark-color;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.5;
   }
+  @include ipad-landscape {
+    // @include flexbox() {
+    // }
+    // @include flex-wrap(wrap) {
+    // }
+    // @include justify-content(space-between) {
+    // }
+  }
+
   @include xl {
     @include flexbox() {
     }
     @include flex-wrap(wrap) {
     }
-    @include justify-content(space-betweenx) {
+    @include justify-content(space-between) {
   }
     h1 {
     font-size: 42px;
@@ -893,15 +997,26 @@ opacity: .7;
     width: 100%;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.5;
   }
 }
 }
 
 .half-page-text {
-  @include xl {
+  @include ipad-landscape {
   width: 35vw;
+  padding: 0 15px;
+  position: relative;
+    // @include flexbox() {
+    // }
+    // @include align-items(center) {
+    // }
+    // @include justify-content(center) {
+    // }
+  }
+  @include xl {
+  width: 40vw;
   padding: 0 15px;
   position: relative;
   @include flexbox() {
@@ -910,9 +1025,9 @@ opacity: .7;
   }
   @include justify-content(center) {
   }
-  p {
-    font-size: 14px;
-  }
+    p {
+      font-size: 17px;
+    }
   }
 }
 
@@ -955,12 +1070,13 @@ opacity: .7;
   @include flex-direction(column) {
   }
   h2 {
+    font-size: 22px;
     margin-bottom: 15px;
     margin-top: 15px;
     letter-spacing: 2px;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.5;
   }
   @include xl {
@@ -990,9 +1106,19 @@ opacity: .7;
   background-position: center;
   width: 80%;
   margin: 0 auto;
+  @include landscape {
+    width: 40%;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+  @include ipad-landscape {
+     width: 30vw;
+  }
   // margin-bottom: 90px;
   @include xl {
     width: 28vw;
+    margin: 0 auto;
     margin-bottom: 0;
   }
 }
@@ -1029,10 +1155,9 @@ opacity: .7;
   background-image: url("images/plant_background_mobile.png");
   position: relative;
   z-index: 30;
-  height: 100vh;
-  min-height: 845px;
-  width: 100%;
-  padding-top: 60px;
+  // height: 100vh;
+  // min-height: 845px;
+  padding: 60px 15px;
   background-size: cover;
   h1 {
     font-size: 30px;
@@ -1043,13 +1168,16 @@ opacity: .7;
   }
   h2 {
     margin-top: 20px;
-    margin-left: 20px;
+    // margin-left: 20px;
     color: $font-dark-color;
     margin-bottom: 20px;
+    @include xl {
+      text-align: center;
+    }
   }
   h3 {
     font-family: 'Special Elite', cursive;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 5px;
     letter-spacing: 1px;
   }
@@ -1060,7 +1188,10 @@ opacity: .7;
   }
   p {
     font-family: 'Special Elite', cursive;
-    font-size: 12px;
+    font-size: 15px;
+  }
+  @include landscape {
+    padding: 60px 15px;
   }
   @include ipad {
     background-color: white;
@@ -1070,6 +1201,7 @@ opacity: .7;
   @include xl {
     background-image: none;
     height: auto;
+    min-height: 0;
   }
 }
 
@@ -1077,10 +1209,10 @@ opacity: .7;
   /* line them up horizontally */
   @include flexbox() {
   }
-
+  width: 90vw;
   /* allow for scrolling */
   overflow-x: auto;
-
+  margin: 0 auto;
   /* make it smooth on iOS */
   -webkit-overflow-scrolling: touch;
   @include xl {
@@ -1092,7 +1224,7 @@ opacity: .7;
   /* make sure the width is honored */
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 100vw;
+  width: 70vw;
   height: auto;
   background-color: rgba(255, 255 ,255, .7);
   // -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
@@ -1103,6 +1235,9 @@ opacity: .7;
   -webkit-scroll-snap-type: mandatory;
       -ms-scroll-snap-type: mandatory;
           scroll-snap-type: mandatory;
+  @include landscape {
+    width: 50vw;
+  }
   @include ipad {
     width: 60vw;
     height: 60vw;
@@ -1275,6 +1410,7 @@ opacity: .7;
 }
 
 .shop-page-text {
+  background-color: white;
   padding: 30px;
   h1 {
     margin-bottom: 30px;
@@ -1286,26 +1422,70 @@ opacity: .7;
     line-height: 17px;
     margin-bottom: 30px;
   }
-  @include ipad {
-    padding: 90px;
+  @include landscape {
+    iframe {
+      width: 150px;
+      height: 150px;
+      padding: 15px;
+    }
   }
+  @include ipad {
+    // text-align: center;
+    padding: 90px;
+    iframe {
+      margin: 0 15px;
+      width: 250px;
+      height: 250px;
+    }
+ }
   @include xl {
     background-color: whitesmoke;
     background-image: url("images/fishswimmingdown.png");
     background-position: left;
     background-repeat: no-repeat;
     padding: 90px 160px;
-    height: 100vh;
+    height: auto;
+    // @include flexbox() {
+    // }
+    // @include flex-direction(column) {
+    // }
+    // @include align-items(center) {
+    // }
+    // @include justify-content(center) {
+    // }
+    iframe {
+      margin: 0 15px;
+      width: 300px;
+      height: 300px;
+
+    }
+  }
+}
+
+.iframe-wrapper {
+  @include landscape {
     @include flexbox() {
     }
-    @include flex-direction(column) {
-    }
-    @include align-items(center) {
+    @include flex-wrap(wrap) {
     }
     @include justify-content(center) {
     }
-    iframe {
-      width: 50vw;
+  }
+  @include ipad {
+    @include flexbox() {
+    }
+    @include flex-wrap(wrap) {
+    }
+    @include justify-content(center) {
+    }
+   }
+  @include xl {
+    display: unset;
+    @include flexbox() {
+    }
+    @include flex-wrap(wrap) {
+    }
+    @include justify-content(center) {
     }
   }
 }
@@ -1319,8 +1499,9 @@ h1.map-h2 {
 
 h2.map-h2 {
   margin-bottom: 15px;
-  @include xl {
+  @include ipad {
     margin-bottom: 30px;
+    text-align: center;
   }
 }
 
