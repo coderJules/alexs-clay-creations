@@ -31,9 +31,17 @@
           <div id="myDropdownHome" class="dropdown-content">
             <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#awards">Awards</a>
+            <a href="#awards">Accolades</a>
             <a href="#shop">Shop</a>
           </div>
+        </div>
+        <div class="desktop-nav">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#awards">Accolades</a></li>
+            <li><a href="#shop">Shop</a></li>
+          </ul>
         </div>
       <a href="index.html"><div class="navbar-logo"></div></a>
 
@@ -41,7 +49,7 @@
    </nav>
   <header>
     <div class="video-div">
-    <iframe src="https://player.vimeo.com/video/312719707?background=1&muted=1&transparent=0" poster="images/Alex_video_image.jpg" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
+      <iframe src="https://player.vimeo.com/video/314068828?background=1&muted=1&transparent=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
     <!-- <div class="video-div">
       <video  autoplay loop preload="metadata"
@@ -99,8 +107,8 @@
       </div>
     </div>
   </div>
-  <div class="awards-div">
-    <h1 id="awards">Accolades</h1>
+  <div class="awards-div" id="awards">
+    <h1 class="award">Accolades</h1>
     <div class="awards-page-text">
       <div class="award-box">
         <img src="images/DC.png" class="dc-image">
@@ -127,11 +135,11 @@
   </div>
 <div id="portfolio" class="portfolio-div">
     <h1>Portfolio</h1>
-  <div class="slider-wrapper">
+ <!--  <div class="slider-wrapper"> -->
     <h2>Mixed Media</h2>
-  <div class="slider">
+<div class="slider">
 
-<div class="snake-slide">
+<div class="mySlides">
   <img src="images/snake.png"
   srcset="images/snake.png 400w, images/snake_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw">
   <div class="slide-text">
@@ -140,7 +148,7 @@
   </div>
 </div>
 
- <div class="log-slide">
+ <div class="mySlides">
   <img src="images/log.png"
   srcset="images/log.png 400w, images/log_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw">
   <div class="slide-text">
@@ -149,7 +157,7 @@
   </div>
 </div>
 
-<div class="squirrel-slide">
+<div class="mySlides">
   <img src="images/squirrel.png"
   srcset="images/squirrel.png 400w, images/squirrel_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw">
   <div class="slide-text">
@@ -158,7 +166,7 @@
  </div>
 </div>
 
-<div class="jungle-slide">
+<div class="mySlides" id="jungle-slide">
   <img src="images/jungle.png"
   srcset="images/jungle.png 400w, images/jungle_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw">
   <div class="slide-text">
@@ -167,7 +175,7 @@
  </div>
 </div>
 
-<div class="bear-slide">
+<div class="mySlides">
   <img src="images/bear_whole.png"
   srcset="images/bear_whole.png 400w, images/bear_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw">
   <div class="slide-text">
@@ -176,7 +184,7 @@
  </div>
 </div>
 
-<div class="cavy-slide">
+<div class="mySlides">
   <img src="images/cavy.png"
   srcset="images/cavy.png 400w, images/cavy_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw" alt="clay figure of cavy animal">
   <div class="slide-text">
@@ -185,7 +193,7 @@
  </div>
 </div>
 
-<div class="rhino-slide">
+<div class="mySlides">
   <img src="images/rhino.png"
   srcset="images/rhino.png 400w, images/rhino_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw" alt="clay figure of cavy animal">
   <div class="slide-text">
@@ -194,7 +202,7 @@
  </div>
 </div>
 
-<div class="camel-slide">
+<div class="mySlides">
   <img src="images/camel.png"
   srcset="images/camel.png 400w, images/camel_ipad.png 1200w" sizes="(max-width: 400px) 90vw, (max-width 1200px) 70vw" alt="clay figure of cavy animal">
   <div class="slide-text">
@@ -203,25 +211,29 @@
  </div>
 </div>
 
-<div class="info-slide" role="img" aria-label="click to see more of Alex's work on Facebook">
+<div id="info-slide" class="mySlides" role="img" aria-label="click to see more of Alex's work on Facebook">
   <div class="slide-info-div">
     <a href="https://www.facebook.com/Alexs-Clay-Creations-421927354681572/" target="_blank"><i class="fab fa-facebook-square" style="color: rgb(0, 126, 148); font-size: 40px; width: 100%; margin: 0 auto; margin-bottom: 20px;"></i>
     <h2>Find Alex's most recent work on Facebook</h2></a>
   </div>
  </div>
+ <button class="slider-button display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="slider-button display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
+<h1>Watch Alex Sculpt</h1>
+<h2>polymer clay</h2>
+<a href="video.html"><div class="video-link"><img src="images/video_icon.png"></div></a>
+<!-- <div class="iframes">
+<iframe src="https://player.vimeo.com/video/313218856?autoplay=1&byline=0&portrait=0&autoplay&quality=720" width="100%" height=100%; frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
-<h2>Watch Alex Sculpt</h2>
-<div class="iframes">
-<iframe src="https://player.vimeo.com/video/313218856?autoplay=1&byline=0&portrait=0&autoplay" width="100%" height=100%; frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+</div> -->
 
 <!-- <a href="video.html"><div class="video-link"><h2>Watch Alex Sculpt</h2><img src="images/video_icon.png">
 </div></a> -->
 </div>
 
-<div class="shop-page-text">
-  <h1 id="shop" class="map-h2">See & Shop</h1>
+<div class="shop-page-text" id="shop">
+  <h1 class="map-h2">See & Shop</h1>
   <h2 class="map-h2">Alex's work available for purchase at Potter Park Zoo and Absolute Gallery</h2>
   <div class="iframe-wrapper">
   <iframe width='100%' height='100%' box-shadow='1px 1px 2px rgba(1, 1, 1, .1)' id='mapcanvas' src='https://maps.google.com/maps?q=Potter%20Park%20Zoo,%201301%20s%20Pennsylvania%20Ave.,%20Lansing,%20MI%2048921&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'><div style='overflow:hidden;'><div id='gmap_canvas' style='height:100%;width:100%;'></div></div><div><small>Powered by <a href="https://www.embedgooglemap.co.uk">Embed Google Map</a></small></div></iframe>
