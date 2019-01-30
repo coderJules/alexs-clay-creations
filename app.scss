@@ -434,7 +434,7 @@ hr {
 }
 
 .transparent-color {
-  background-color: rgba(70, 80, 90, .9);
+  background-color: slategray;
    -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
           box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
   @include landscape {
@@ -449,7 +449,7 @@ hr {
 }
 
 .background-color {
-  background-color: rgba(70, 80, 90, .9);
+  background-color: slategray;
    -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
           box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
   @include landscape {
@@ -459,7 +459,7 @@ hr {
     display: none;
   }
   @include ipad {
-    background-color: rgba(70, 80, 90, .9);
+    background-color: slategray;
   }
 }
 
@@ -501,7 +501,7 @@ hr {
   @include align-self(right) {
   }
     @include landscape {
-      background-color: rgba(70, 80, 90, .9);
+      background-color: slategray;
       padding: 19px 30px;
       height: 35px;
     }
@@ -560,6 +560,40 @@ hr {
   display:block;
 }
 
+.desktop-nav {
+  display: none;
+  @include xl {
+    display: unset;
+    width: 100vw;
+    height: 90px;
+      ul {
+        width: 60vw;
+        position: absolute;
+        right: 0;
+        @include flexbox() {
+        }
+        @include flex-wrap(wrap) {
+        }
+        @include justify-content(space-around) {
+        }
+    li {
+      color: white;
+      width: 90px;
+      height: 90px;
+      a {
+        line-height: 90px;
+        font-family: $font-content;
+        letter-spacing: 1.5px;
+        font-weight: 100;
+        }
+      a:hover {
+        color: #DEE4E9;
+      }
+      }
+    }
+  }
+}
+
 header {
   background-image: url("images/plant_background_mobile.png");
   position: relative;
@@ -599,7 +633,11 @@ header {
 
 .no-background {
   background-image: none;
-  height: 100px;
+  height: 0;
+  bottom-margin: -90px;
+  @include ipad {
+    height: 0;
+  }
 }
 
 .centered-box {
@@ -886,7 +924,6 @@ opacity: .7;
   padding: 30px;
   h1 {
     margin-bottom: 30px;
-    margin-top: 30px;
     font-size: 30px;
     text-align: center;
     color: slategray !important;
@@ -923,10 +960,13 @@ opacity: .7;
 .awards-div {
   background-color: whitesmoke;
   padding: 30px 0;
+  @include ipad {
+    padding: 60px 0;
+  }
   @include xl {
   padding: 90px 0;
   height: auto;
-}
+  }
 }
 
 .awards-page-text {
@@ -935,7 +975,7 @@ opacity: .7;
   font-size: 14px;
 }
   @include ipad {
-    padding: 0 90px
+    padding: 60px 90px;
   }
   @include xl {
   background-color: whitesmoke;
@@ -964,7 +1004,7 @@ opacity: .7;
 }
 
 #about {
-  padding: 70px 0;
+  padding: 30px 0;
   h1 {
     font-size: 32px;
     letter-spacing: 4px;
@@ -1041,7 +1081,7 @@ opacity: .7;
 
 
 
-#awards {
+.award {
   width: 100%;
   font-size: 32px;
   margin-bottom: 30px;
@@ -1155,21 +1195,23 @@ opacity: .7;
   background-image: url("images/plant_background_mobile.png");
   position: relative;
   z-index: 30;
+  text-align: center;
   // height: 100vh;
   // min-height: 845px;
   padding: 60px 15px;
   background-size: cover;
   h1 {
     font-size: 30px;
-    margin-top: 20px;
     margin-left: 20px;
     text-align: center;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 5px white;
   }
   h2 {
     margin-top: 20px;
     // margin-left: 20px;
     color: $font-dark-color;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, .7);
     margin-bottom: 20px;
     @include xl {
       text-align: center;
@@ -1180,6 +1222,7 @@ opacity: .7;
     font-size: 15px;
     margin-bottom: 5px;
     letter-spacing: 1px;
+    color: #2c3339;
   }
   h4 {
     font-family: 'Special Elite', cursive;
@@ -1189,6 +1232,11 @@ opacity: .7;
   p {
     font-family: 'Special Elite', cursive;
     font-size: 15px;
+    color: #2c3339;
+    bottom: 10px;
+  }
+  iframe {
+    margin: 0 auto;
   }
   @include landscape {
     padding: 60px 15px;
@@ -1205,46 +1253,86 @@ opacity: .7;
   }
 }
 
+// .slideshow-container {
+//   /* line them up horizontally */
+//   @include flexbox() {
+//   }
+//   width: 90vw;
+//   /* allow for scrolling */
+//   overflow-x: auto;
+//   margin: 0 auto;
+//   /* make it smooth on iOS */
+//   -webkit-overflow-scrolling: touch;
+//   @include xl {
+//     // width: 45vw;
+//     // margin: 0 auto;
+//     width: auto;
+//     overflow-x: none;
+//     -webkit-overflow-scrolling: none;
+//     max-width: 1000px;
+//     position: relative;
+//     margin: auto;
+//   }
+// }
+// .slideshow-container > div {
+//   /* make sure the width is honored */
+//   -ms-flex-negative: 0;
+//       flex-shrink: 0;
+//   width: 70vw;
+//   height: auto;
+//   background-color: rgba(255, 255 ,255, .7);
+
+//   // -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
+//   //         box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
+//   -webkit-scroll-snap-points-x: repeat(90vw);
+//       -ms-scroll-snap-points-x: repeat(90vw);
+//           scroll-snap-points-x: repeat(90vw);
+//   -webkit-scroll-snap-type: mandatory;
+//       -ms-scroll-snap-type: mandatory;
+//           scroll-snap-type: mandatory;
+//   @include landscape {
+//     width: 50vw;
+//   }
+//   @include ipad {
+//     width: 60vw;
+//     height: 60vw;
+//   }
+//   @include xl {
+//     width: 35vw;
+//   height: auto;
+//   }
+// }
+
 .slider {
-  /* line them up horizontally */
-  @include flexbox() {
-  }
-  width: 90vw;
-  /* allow for scrolling */
-  overflow-x: auto;
+  position: relative;
+  height: 90vw;
   margin: 0 auto;
-  /* make it smooth on iOS */
-  -webkit-overflow-scrolling: touch;
-  @include xl {
-    width: 45vw;
-    margin: 0 auto;
+  padding-bottom: 60px;
+  button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    // padding: 20px;
+    border: none;
+    font-size: 30px;
+    color: slategray;
+    background: none;
   }
-}
-.slider > div {
-  /* make sure the width is honored */
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 70vw;
-  height: auto;
-  background-color: rgba(255, 255 ,255, .7);
-  // -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
-  //         box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
-  -webkit-scroll-snap-points-x: repeat(90vw);
-      -ms-scroll-snap-points-x: repeat(90vw);
-          scroll-snap-points-x: repeat(90vw);
-  -webkit-scroll-snap-type: mandatory;
-      -ms-scroll-snap-type: mandatory;
-          scroll-snap-type: mandatory;
-  @include landscape {
-    width: 50vw;
+  button:hover {
+    opacity: .7;
+    text-decoration: none;
+  }
+  button:focus {
+    outline: none;
   }
   @include ipad {
-    width: 60vw;
-    height: 60vw;
+  width: 80vw;
+  height: 80vw;
   }
   @include xl {
-    width: 35vw;
-  height: auto;
+    width: 600px;
+    height: 600px;
+    padding: 50px;
   }
 }
 
@@ -1261,14 +1349,29 @@ opacity: .7;
 
 //GALLERY IMAGES-----------------------
 
-.elephant-slide {
- z-index: 100;
+.mySlides {
+  opacity: 0;
+  z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  padding: 30px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  left: 0;
+    right: 0;
+    left-margin: auto;
+    right-margin: auto;
   img {
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
+
+  }
+  @include xl {
+    img {
+      width: 500px;
+      height: 500px;
+    }
   }
 }
 
@@ -1280,33 +1383,46 @@ opacity: .7;
     text-align: right;
   }
 
-.snake-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
+.display-right {
+  right: 0;
+  top: 50%;
+  margin-top: -100px;
+  z-index: 4000;
 }
 
-.log-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
+.display-left {
+  left: 0;
+  top: 50%;
+  margin-top: -100px;
+  z-index: 4000;
 }
+// .snake-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
+
+// .log-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
 
 .video-link {
   img {
     width: 150px;
   }
-  width: 150px;
+  margin: 0 auto;
   z-index: 800;
   position: relative;
   margin-top: 15px;
@@ -1314,85 +1430,99 @@ opacity: .7;
   @include ipad {
     margin-left: 0;
   }
-  @include xl {
-    float: right;
-  }
 }
 
-.squirrel-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
 
-.jungle-slide {
- z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
+
+.iframes-video {
+  // margin-bottom: 90px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  // height: 100vh;
+}
+  // @include xl {
+  //   float: right;
+  // }
+
+
+// .squirrel-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
+
+#jungle-slide {
   h3, p {
     color: white;
+    right: 0;
+    margin-right: auto;
+    left: 0;
+    margin-left: auto;
+    bottom: 5px;
   }
 }
 
-.bear-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
+// .bear-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
 
-.cavy-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
+// .cavy-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
 
-.rhino-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
+// .rhino-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
 
-.camel-slide {
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  img {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
+// .camel-slide {
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: relative;
+//   img {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+// }
 
 .info-slide {
+  display: none;
   z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   img {
     width: 100%;
     margin: 0 auto;
@@ -1445,6 +1575,7 @@ opacity: .7;
     background-repeat: no-repeat;
     padding: 90px 160px;
     height: auto;
+
     // @include flexbox() {
     // }
     // @include flex-direction(column) {
@@ -1494,6 +1625,10 @@ h1.map-h2 {
   margin-top: 60px;
   @include ipad {
     margin-top: 0;
+  }
+  @include xl {
+    margin-top: 30px;
+    font-size: 42px;
   }
 }
 
@@ -1573,5 +1708,20 @@ footer {
   background-color: rgba(60, 60, 60, .2);
   p {
     font-size: 12px;
+  }
+}
+
+//-------Video.html styles
+
+.page-wrapper {
+  min-height: calc(100vh - 260px);
+  // margin-top: -154px;
+  // margin-bottom: -154px;
+  z-index: -10px;
+  background-color: black;
+  @include ipad {
+    height: auto;
+    margin-top: 0;
+    // margin-bottom: -90px;
   }
 }

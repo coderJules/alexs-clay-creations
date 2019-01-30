@@ -24,7 +24,7 @@ window.onclick = function(event) {
   }
 }
 
-
+//Banner text fade-in effect on scroll
 $(function(){  // $(document).ready shorthand
 
 });
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 });
 
-
+//Navbar color change on scroll
 $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('.page-text');
@@ -91,3 +91,23 @@ $(document).ready(function(){
   $('.mobile-dropdown-nav').addClass('transparent-color');
  }
 });
+
+//Slideshow
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.opacity = "0";
+  }
+  x[slideIndex-1].style.opacity = "1";
+}
