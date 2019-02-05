@@ -24,7 +24,6 @@ window.onclick = function(event) {
   }
 }
 
-//Banner text fade-in effect on scroll
 $(function(){  // $(document).ready shorthand
 
 });
@@ -53,7 +52,6 @@ $(document).ready(function() {
 
 });
 
-//Navbar color change on scroll
 $(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('.page-text');
@@ -70,20 +68,6 @@ $(document).ready(function(){
        }
    });
 });
-
-// $(document).ready(function(){
-//    var scroll_start = 0;
-//    var startchange = $('.page-text');
-//    var offset = startchange.offset();
-//    $(document).scroll(function() {
-//       scroll_start = $(this).scrollTop();
-//       if(scroll_start < offset.top) {
-//           $('.background-color').css('background-color', 'rgba(70, 80, 90, .9');
-//        } else {
-//           $('.background-color').css('background-color', 'rgba(70, 80, 90, .9)');
-//        }
-//    });
-// });
 
 $(document).ready(function(){
  if($(window).width()<500){
