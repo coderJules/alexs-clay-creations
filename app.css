@@ -318,7 +318,7 @@ header {
   @media only screen and (min-width: 768px) {
     .ipad-banner-bear {
       display: unset;
-      content: url("https://res.cloudinary.com/dtpogs4sv/image/upload/q_auto/v1549389509/bear_600.png");
+      content: url("images/bear_600.png");
       position: absolute;
       right: 30px;
       bottom: 30px;
