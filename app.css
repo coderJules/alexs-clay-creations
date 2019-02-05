@@ -294,7 +294,7 @@ nav {
             color: #DEE4E9; } }
 
 header {
-  background-image: url("images/background_leaves_400.jpg");
+  background-image: url("https://res.cloudinary.com/dtpogs4sv/image/upload/q_auto/v1549385874/background_leaves_1920.jpg");
   position: relative;
   z-index: -2;
   padding-top: 90px;
@@ -304,16 +304,13 @@ header {
   margin-right: -30px; }
   @media only screen and (min-width: 768px) {
     header {
-      background-image: url("images/background_leaves_800.jpg");
       height: calc(66vh - 90px);
       margin-right: 0; } }
   @media only screen and (min-width: 961px) and (orientation: landscape) {
     header {
-      background-image: url("images/background_leaves_1200.jpg");
       height: calc(100vh - 70px); } }
   @media only screen and (min-width: 1026px) {
     header {
-      background-image: url("images/background_leaves_1920.jpg");
       height: calc(100vh - 90px); } }
 
 .ipad-banner-bear {
@@ -321,7 +318,7 @@ header {
   @media only screen and (min-width: 768px) {
     .ipad-banner-bear {
       display: unset;
-      content: url("images/bear_whole.png");
+      content: url("https://res.cloudinary.com/dtpogs4sv/image/upload/q_auto/v1549389509/bear_600.png");
       position: absolute;
       right: 30px;
       bottom: 30px;
@@ -776,7 +773,7 @@ header {
     line-height: 1.5; }
   @media only screen and (min-width: 1026px) {
     .award-box {
-      height: 350px;
+      height: 400px;
       width: 27vw;
       -moz-flex-grow: 1;
       -ms-flex-grow: 1;
@@ -796,6 +793,12 @@ header {
       .award-box img {
         width: 50%;
         margin: 0 auto; } }
+  @media only screen and (min-width: 1281px) {
+    .award-box {
+      height: 450px; } }
+  @media only screen and (min-width: 1600) {
+    .award-box {
+      height: 500px; } }
 
 .alex-photo {
   background-position: center;
