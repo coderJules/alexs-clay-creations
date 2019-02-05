@@ -294,7 +294,7 @@ nav {
             color: #DEE4E9; } }
 
 header {
-  background-image: url("https://res.cloudinary.com/dtpogs4sv/image/upload/q_auto/v1549385874/background_leaves_1920.jpg");
+  background-image: url("images/background_leaves_400.jpg");
   position: relative;
   z-index: -2;
   padding-top: 90px;
@@ -304,10 +304,12 @@ header {
   margin-right: -30px; }
   @media only screen and (min-width: 768px) {
     header {
+      background-image: url("images/background_leaves_800.jpg");
       height: calc(66vh - 90px);
       margin-right: 0; } }
   @media only screen and (min-width: 961px) and (orientation: landscape) {
     header {
+      background-image: url("images/background_leaves_1200.jpg");
       height: calc(100vh - 70px); } }
   @media only screen and (min-width: 1026px) {
     header {
@@ -853,7 +855,9 @@ header {
   z-index: 30;
   text-align: center;
   padding: 60px 15px;
-  background-size: cover; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center; }
   .portfolio-div h1 {
     font-size: 30px;
     margin-left: 20px;
@@ -887,7 +891,8 @@ header {
     margin: 0 auto; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .portfolio-div {
-      background-image: url("images/background_leaves_1200.jpg");
+      background-position: center;
+      background-image: url("images/background_leaves_800.jpg");
       padding: 60px 15px; } }
   @media only screen and (min-width: 768px) {
     .portfolio-div {

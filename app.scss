@@ -595,7 +595,7 @@ hr {
 }
 
 header {
-  background-image: url('https://res.cloudinary.com/dtpogs4sv/image/upload/q_auto/v1549385874/background_leaves_1920.jpg');
+  background-image: url('images/background_leaves_400.jpg');
   position: relative;
   z-index: -2;
   padding-top: 90px;
@@ -604,10 +604,12 @@ header {
   background-size: cover;
   margin-right: -30px;
     @include ipad {
+      background-image: url('images/background_leaves_800.jpg');
       height: calc(66vh - 90px);
       margin-right: 0;
     }
      @include ipad-landscape {
+      background-image: url('images/background_leaves_1200.jpg');
     height: calc(100vh - 70px);
     }
     @include xl {
@@ -1210,7 +1212,9 @@ opacity: .7;
   // height: 100vh;
   // min-height: 845px;
   padding: 60px 15px;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: right center;
   h1 {
     font-size: 30px;
     margin-left: 20px;
@@ -1250,7 +1254,8 @@ opacity: .7;
     margin: 0 auto;
   }
   @include landscape {
-    background-image: url("images/background_leaves_1200.jpg");
+    background-position: center;
+    background-image: url("images/background_leaves_800.jpg");
     padding: 60px 15px;
   }
   @include ipad {
