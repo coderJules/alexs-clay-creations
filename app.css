@@ -956,6 +956,9 @@ header {
   right-margin: auto; }
   .mySlides img {
     width: 80%; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .mySlides img {
+      width: 60%; } }
   @media only screen and (min-width: 1026px) {
     .mySlides img {
       width: 500px;
@@ -963,10 +966,16 @@ header {
 
 .slide-text {
   position: absolute;
-  right: 90px;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
   bottom: 30px;
-  padding: 30px;
-  text-align: right; }
+  padding: 30px; }
+  @media only screen and (min-width: 768px) {
+    .slide-text {
+      right: 90px;
+      text-align: right; } }
 
 .display-right {
   right: 0;
