@@ -707,11 +707,11 @@ header {
   }
 }
 
-.fade-in {
-  @include ipad {
-  opacity: 0;
-  }
-}
+// .fade-in {
+//   @include ipad {
+//   opacity: 0;
+//   }
+// }
 
 .video-div iframe {
    width: 100%;

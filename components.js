@@ -24,33 +24,33 @@ window.onclick = function(event) {
   }
 }
 
-$(function(){  // $(document).ready shorthand
+// $(function(){  // $(document).ready shorthand
 
-});
+// });
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
+//     /* Every time the window is scrolled ... */
+//     $(window).scroll( function(){
 
-        /* Check the location of each desired element */
-        $('.fade-in').each( function(i){
+//         /* Check the location of each desired element */
+//         $('.fade-in').each( function(i){
 
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
+//             var bottom_of_object = $(this).position().top + $(this).outerHeight();
+//             var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-            /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
+//             /* If the object is completely visible in the window, fade it it */
+//             if( bottom_of_window > bottom_of_object ){
 
-                $(this).fadeTo(800, 1);
+//                 $(this).fadeTo(800, 1);
 
-            }
+//             }
 
-        });
+//         });
 
-    });
+//     });
 
-});
+// });
 
 $(document).ready(function(){
    var scroll_start = 0;
@@ -99,12 +99,12 @@ function showDivs(n) {
 
 // Stop load of images off veiwport
 
-$(document).ready(function () {
-  setTimeout(function () {
-    $('.load-delay').each(function () {
-      var imagex = $(this);
-      var imgOriginal = imagex.data('original');
-      $(imagex).attr('src', imgOriginal);
-    });
-  }, 3000);
-});
+// $(document).ready(function () {
+//   setTimeout(function () {
+//     $('.load-delay').each(function () {
+//       var imagex = $(this);
+//       var imgOriginal = imagex.data('original');
+//       $(imagex).attr('src', imgOriginal);
+//     });
+//   }, 3000);
+// });
