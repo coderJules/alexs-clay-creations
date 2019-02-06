@@ -867,6 +867,7 @@ opacity: .7;
 }
 
 .snake-img {
+  content: url('images/snake_homepage_400.png');
   margin-bottom: -40px;
   width: 65%;
   @include landscape {
@@ -906,6 +907,7 @@ opacity: .7;
 }
 
 .elephant-img {
+  content: url('images/elephant_homepage_400.png');
   width: 65%;
   margin-top: -45px;
   @include landscape {
