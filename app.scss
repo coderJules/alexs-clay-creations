@@ -1383,7 +1383,11 @@ opacity: .7;
     right-margin: auto;
   img {
     width: 80%;
-
+  }
+  @include landscape {
+    img {
+    width: 60%;
+    }
   }
   @include xl {
     img {
@@ -1395,10 +1399,16 @@ opacity: .7;
 
 .slide-text {
     position: absolute;
-    right: 90px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
     bottom: 30px;
     padding: 30px;
-    text-align: right;
+    @include ipad {
+     right: 90px;
+     text-align: right;
+    }
   }
 
 .display-right {
