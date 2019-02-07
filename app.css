@@ -1004,10 +1004,22 @@ header {
       margin-left: 0; } }
 
 .iframes-video {
-  width: 100vw;
+  width: 80%;
   position: absolute;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 90px; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .iframes-video {
+      padding-top: 154px;
+      margin-bottom: 60px; } }
+  @media only screen and (min-width: 1026px) {
+    .iframes-video {
+      width: 70%; } }
 
 #jungle-slide h3, #jungle-slide p {
   color: white; }
@@ -1195,10 +1207,16 @@ footer {
 .page-wrapper {
   min-height: calc(100vh - 260px);
   z-index: -10px;
-  background-color: black; }
-  @media only screen and (min-width: 768px) {
+  background-color: black;
+  position: relative;
+  z-index: -400;
+  padding: 120px;
+  margin-top: -154px; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
     .page-wrapper {
-      height: auto;
-      margin-top: 0; } }
+      height: 100vh; } }
+  @media only screen and (min-width: 1026px) {
+    .page-wrapper {
+      height: calc(100vh); } }
 
 /*# sourceMappingURL=app.css.map */

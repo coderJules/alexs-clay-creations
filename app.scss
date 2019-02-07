@@ -1465,10 +1465,24 @@ opacity: .7;
 
 
 .iframes-video {
-  width: 100vw;
+  width: 80%;
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 90px;
+    @include ipad {
+      }
+    @include landscape {
+      padding-top: 154px;
+      margin-bottom: 60px;
+      }
+    @include xl {
+      width: 70%;
+    }
   }
 
 #jungle-slide {
@@ -1676,13 +1690,22 @@ footer {
 
 .page-wrapper {
   min-height: calc(100vh - 260px);
-  // margin-top: -154px;
   // margin-bottom: -154px;
   z-index: -10px;
   background-color: black;
+  position: relative;
+  z-index: -400;
+  padding: 120px;
+  margin-top: -154px;
   @include ipad {
-    height: auto;
-    margin-top: 0;
+    // height: auto;
     // margin-bottom: -90px;
+  }
+   @include landscape {
+      height: 100vh;
+
+  }
+  @include xl {
+    height: calc(100vh);
   }
 }
