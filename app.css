@@ -685,14 +685,22 @@ header {
       -ms-flex-align: center;
       align-items: center;
       position: relative;
-      height: calc(65vh - 90px);
+      height: auto;
       margin: 0 auto; }
       .awards-page-text h1 {
         text-align: center; }
       .awards-page-text p {
         line-height: 17px;
         margin-bottom: 30px;
+        text-align: left; }
+      .awards-page-text h2 {
         text-align: center; } }
+  @media only screen and (min-width: 1281px) {
+    .awards-page-text {
+      padding: 0 120px; } }
+  @media only screen and (min-width: 1600) {
+    .awards-page-text {
+      padding: 200px; } }
 
 .about-alex {
   padding: 30px 0; }
@@ -808,14 +816,15 @@ header {
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap; }
       .award-box img {
-        width: 50%;
+        width: 40%;
         margin: 0 auto; } }
   @media only screen and (min-width: 1281px) {
     .award-box {
       height: 450px; } }
   @media only screen and (min-width: 1600) {
     .award-box {
-      height: 500px; } }
+      height: 550px;
+      width: 20vw; } }
 
 .z-index-20 {
   position: relative;
@@ -824,18 +833,28 @@ header {
 .alex-photo-pottery {
   position: relative;
   z-index: 0;
-  margin-bottom: -90px;
-  margin-top: -160px;
-  margin-left: -100px;
   background-position: center;
   width: 100%;
   margin: 0 auto; }
+  .alex-photo-pottery img {
+    margin-bottom: -60px;
+    margin-top: -120px;
+    margin-left: -100px; }
   @media only screen and (min-width: 768px) {
-    .alex-photo-pottery img {
-      margin-bottom: -90px;
-      margin-top: -160px;
-      margin-left: -100px;
-      margin-bottom: -90px; } }
+    .alex-photo-pottery {
+      width: 80%; }
+      .alex-photo-pottery img {
+        margin-bottom: -90px;
+        margin-top: -160px;
+        margin-left: -100px;
+        margin-bottom: -90px; } }
+  @media only screen and (min-width: 1026px) {
+    .alex-photo-pottery {
+      width: 28vw; }
+      .alex-photo-pottery img {
+        margin-top: -100px;
+        margin-left: -100px;
+        margin-bottom: -40px; } }
 
 .alex-photo {
   background-position: center;
@@ -843,6 +862,10 @@ header {
   margin: 0 auto; }
   .alex-photo img {
     margin-bottom: -90px; }
+  @media only screen and (min-width: 768px) {
+    .alex-photo {
+      width: 50%;
+      margin-left: 25vw; } }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .alex-photo {
       width: 40%;
@@ -854,9 +877,10 @@ header {
       width: 30vw; } }
   @media only screen and (min-width: 1026px) {
     .alex-photo {
-      width: 28vw;
+      width: 20vw;
       margin: 0 auto;
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      margin-left: 10vw; } }
 
 .award-image {
   width: 30%;
@@ -1164,15 +1188,13 @@ header {
     justify-content: center;
     -ms-flex-pack: center; } }
 
-h1.map-h2 {
-  margin-top: 60px; }
-  @media only screen and (min-width: 768px) {
-    h1.map-h2 {
-      margin-top: 0; } }
-  @media only screen and (min-width: 1026px) {
-    h1.map-h2 {
-      margin-top: 30px;
-      font-size: 42px; } }
+@media only screen and (min-width: 768px) {
+  h1.map-h2 {
+    margin-top: 0; } }
+@media only screen and (min-width: 1026px) {
+  h1.map-h2 {
+    margin-top: 30px;
+    font-size: 42px; } }
 
 h2.map-h2 {
   margin-bottom: 15px; }
@@ -1185,7 +1207,7 @@ h2.map-h2 {
   height: 30px; }
 
 footer {
-  background-color: rgba(70, 70, 70, 0.9);
+  background-color: #464646;
   height: 190px; }
   footer h2 {
     font-family: "Merriweather", serif;
@@ -1233,6 +1255,21 @@ footer {
   @media only screen and (min-width: 1026px) {
     .second-nav {
       padding-right: 190px; } }
+  .second-nav ul {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -webkit-box-pack: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: space-between; }
 
 .contact-info {
   -webkit-align-self: flex-start;
