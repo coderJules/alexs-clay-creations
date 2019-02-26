@@ -114,6 +114,7 @@ $darkgray: rgba(70, 70, 70, .9);
     font-size: 40px;
     font-weight: 400;
     color: $gold;
+    padding-top: 60px;
     letter-spacing: 3px;
     line-height: 20px;
     text-shadow: 1px 1px 3px rgba(70, 70, 70, 0.2);
@@ -434,10 +435,10 @@ hr {
   @include ipad {
     display: unset;
     left: 30px;
-    content: url("images/logo_lion.svg");
+    content: url("images/bull_logo_pc_2.svg");
   }
   @include xl {
-      content: url("images/cutebullpc.svg");
+      content: url("images/bull_logo_pc_2.svg");
       height: 60px;
       margin-top: 0;
   }
@@ -571,13 +572,19 @@ hr {
 }
 
 .desktop-nav {
+
   display: none;
   @include xl {
     display: unset;
     width: 100vw;
     height: 90px;
+    @include flexbox() {
+    }
+    @include justify-content(center) {
+    }
       ul {
         width: 60vw;
+        margin: 0 auto;
         position: absolute;
         right: 0;
         @include flexbox() {
@@ -586,11 +593,14 @@ hr {
         }
         @include justify-content(space-around) {
         }
+      }
+
     li {
       color: white;
-      width: 90px;
+      // width: 90px;
       height: 90px;
       a {
+        margin: 0 auto;
         line-height: 90px;
         font-family: $font-navbar;
         letter-spacing: 1.5px;
@@ -601,8 +611,18 @@ hr {
       }
       }
     }
+    @include xxl {
+      ul {
+      width: 700px;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      position: absolute;
+      }
+    }
   }
-}
+
 
 header {
   background-image: url('images/background_leaves_400.jpg');
@@ -614,7 +634,6 @@ header {
   background-size: cover;
   margin-right: -30px;
     @include ipad {
-      background-image: url('images/background_leaves_800.jpg');
       height: calc(66vh - 90px);
       margin-right: 0;
     }
@@ -850,7 +869,7 @@ header {
 }
 
 .border {
-    padding: 60px 15px;
+    padding: 0 15px 60px 15px;
     border: 3px solid rgba(70, 70, 70, 0.9);
     width: 100%;
 }
@@ -965,11 +984,12 @@ header {
     padding: 90px;
   }
   @include xl {
+
     background-color: white;
     background-position: left;
     background-repeat: no-repeat;
     padding: 90px 160px;
-    height: 100vh;
+    height: auto;
     @include flexbox() {
     }
     @include align-items(center) {
@@ -1029,11 +1049,15 @@ header {
   padding: 30px 0;
   h1 {
     letter-spacing: 4px;
-    width: 100%;
+    width: 100vw;
   }
   p {
+    padding: 0 30px;
     font-size: 17px;
     line-height: 1.5;
+  }
+  @include ipad {
+    padding: 0;
   }
   @include ipad-landscape {
     // @include flexbox() {
@@ -1049,7 +1073,7 @@ header {
     }
     @include flex-wrap(wrap) {
     }
-    @include justify-content(space-between) {
+    @include justify-content(center) {
   }
     h1 {
     font-size: 42px;
@@ -1097,6 +1121,7 @@ header {
   margin-top: 30px;
   text-align: center;
   @include xl {
+    margin-top: 0;
     font-size: 42px;
     letter-spacing: 4px;
     width: 100%;
@@ -1127,7 +1152,7 @@ header {
     line-height: 1.5;
   }
   @include xl {
-    height: 400px;
+    height: 500px;
     width: 27vw;
     @include flex-grow(1) {
   }
@@ -1148,6 +1173,31 @@ header {
   @include custom(1600) {
     height: 500px;
   }
+}
+
+.z-index-20 {
+  position: relative;
+  z-index: 20;
+}
+
+.alex-photo-pottery {
+  position: relative;
+  z-index: 0;
+  margin-bottom: -90px;
+    margin-top: -160px;
+    margin-left: -100px;
+  @include ipad {
+  img {
+    margin-bottom: -90px;
+    margin-top: -160px;
+    margin-left: -100px;
+    margin-bottom: -90px;
+  }
+  }
+  // content: url("images/Alex_pic.png");
+  background-position: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 
@@ -1278,6 +1328,12 @@ header {
   }
 }
 
+.black-box {
+  width: 80%;
+  height: 50px;
+  background-color: rgba(70, 70, 70, .9);
+}
+
 // .slideshow-container {
 //   /* line them up horizontally */
 //   @include flexbox() {
@@ -1375,12 +1431,13 @@ header {
 //GALLERY IMAGES-----------------------
 
 .mySlides {
+  height: auto;
   opacity: 0;
   z-index: 100;
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
-  padding: 30px;
+
   -webkit-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
@@ -1392,9 +1449,12 @@ header {
     width: 80%;
   }
   @include landscape {
+    padding: 30px;
     img {
     width: 60%;
     }
+  }
+  @include ipad {
   }
   @include xl {
     img {
@@ -1405,16 +1465,18 @@ header {
 }
 
 .slide-text {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-    bottom: 30px;
-    padding: 30px;
+    // position: absolute;
+    // right: 0;
+    // left: 0;
+    // margin-right: auto;
+    // margin-left: auto;
+    // bottom: 30px;
+    text-align: center;
+    margin-bottom: -60px;
+
+    // padding: 30px;
     @include ipad {
      right: 90px;
-     text-align: right;
     }
   }
 
@@ -1626,7 +1688,7 @@ h2.map-h2 {
 footer {
   // background-color: rgb(175, 191, 140);
   background-color: $font-dark-color;
-  height: 170px;
+  height: 190px;
   h2 {
     font-family: $font-content;
     letter-spacing: 1.5px;
@@ -1648,7 +1710,7 @@ footer {
     }
   }
   @include ipad {
-    height: 190px;
+    height: 211px;
   }
 }
 
@@ -1661,6 +1723,10 @@ footer {
   @include ipad {
     padding: 30px 90px;
   }
+  @include xl {
+   @include justify-content(center) {
+   }
+  }
 }
 
 .second-nav {
@@ -1668,6 +1734,9 @@ footer {
   padding-right: 15px;
   p {
     text-decoration: underline;
+  }
+  @include xl {
+    padding-right: 190px;
   }
 }
 
@@ -1682,6 +1751,9 @@ footer {
 
 .social-media {
   padding-left: 15px;
+  @include xl {
+    padding-left: 190px;
+  }
 }
 
 .copyright {
