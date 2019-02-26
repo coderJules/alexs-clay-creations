@@ -133,7 +133,7 @@ nav {
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .navbar-logo {
       display: none; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .navbar-logo {
       display: unset;
       left: 30px;
@@ -153,7 +153,7 @@ nav {
       background-color: transparent;
       -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
       box-shadow: 1px 1px 3px rgba(1, 1, 1, 0); } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .transparent-color {
       display: unset;
       background-color: transparent; } }
@@ -168,7 +168,7 @@ nav {
       -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
       box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
       display: none; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .background-color {
       background-color: rgba(70, 70, 70, 0.9); } }
 
@@ -191,7 +191,7 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .mobile-dropdown-nav {
       transition: 0.5s background-color ease;
       -webkit-box-shadow: none;
@@ -216,7 +216,7 @@ nav {
       background-color: slategray;
       padding: 19px 30px;
       height: 35px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .dropbtn {
       padding: 30px 30px 30px 30px; } }
   @media only screen and (min-width: 1026px) {
@@ -231,7 +231,7 @@ nav {
 .dropdown {
   position: absolute;
   right: 0; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .dropdown {
       right: 30px; } }
 
@@ -322,7 +322,10 @@ header {
   width: 100%;
   background-size: cover;
   margin-right: -30px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    header {
+      height: calc(100vh - 70px); } }
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     header {
       height: calc(66vh - 90px);
       margin-right: 0; } }
@@ -336,7 +339,7 @@ header {
 
 .ipad-banner-bear {
   display: hidden; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .ipad-banner-bear {
       display: unset;
       content: url("images/bear_600.png");
@@ -353,7 +356,7 @@ header {
   background-image: none;
   height: 0;
   bottom-margin: -90px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .no-background {
       height: 0; } }
 
@@ -365,7 +368,12 @@ header {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .centered-box {
+      top: calc(50vh);
+      margin-top: -70px;
+      z-index: 5; } }
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .centered-box {
       padding: 90px; } }
   @media only screen and (min-width: 1026px) {
@@ -386,7 +394,10 @@ header {
     position: relative;
     z-index: 20;
     line-height: 40px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .tan-box {
+      margin: auto 0; } }
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .tan-box {
       display: none; } }
   @media only screen and (min-width: 1026px) {
@@ -395,7 +406,7 @@ header {
 
 .video-div {
   display: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .video-div {
       display: unset;
       position: fixed;
@@ -405,11 +416,13 @@ header {
       z-index: -1;
       pointer-events: none;
       overflow: hidden; } }
-  @media only screen and (min-width: 768px) and (min-width: 961px) and (orientation: landscape) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) and (min-width: 961px) and (orientation: landscape) {
     .video-div {
+      display: unset;
       height: 100vh; } }
-  @media only screen and (min-width: 768px) and (min-width: 1026px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) and (min-width: 1026px) {
     .video-div {
+      display: unset;
       height: 100vh; } }
 
 .video-div iframe {
@@ -427,7 +440,7 @@ header {
 
 .banner-video {
   display: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .banner-video {
       display: unset;
       -o-object-fit: cover;
@@ -446,7 +459,7 @@ header {
   width: 80vw;
   padding: 15px; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 450px) {
   .dark-overlay {
     width: 100%;
     height: 100%;
@@ -462,7 +475,7 @@ header {
 
 .video-banner-text {
   display: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .video-banner-text {
       display: unset;
       width: 100%;
@@ -510,7 +523,7 @@ header {
   width: 100%;
   height: 150px;
   text-align: center; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .video-banner-text > div h2 {
       width: 66%;
       line-height: 32px; } }
@@ -523,6 +536,9 @@ header {
   padding: 0 15px 60px 15px;
   border: 3px solid rgba(70, 70, 70, 0.9);
   width: 100%; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .border {
+      border: 0 solid rgba(70, 70, 70, 0.9); } }
 
 .banner-text {
   width: 90%;
@@ -530,7 +546,7 @@ header {
   padding-left: 0;
   position: relative;
   z-index: 10; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .banner-text {
       display: none; } }
   @media only screen and (min-width: 1026px) {
@@ -541,7 +557,7 @@ header {
 
 .banner-image {
   display: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .banner-image {
       display: unset;
       width: 700px;
@@ -557,7 +573,7 @@ header {
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .snake-img {
       display: none; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .snake-img {
       display: none; } }
   @media only screen and (min-width: 1026px) {
@@ -578,7 +594,7 @@ header {
       top: 50%;
       transform: translateY(-50%);
       position: absolute; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .bear-img {
       display: none; } }
   @media only screen and (min-width: 1026px) {
@@ -593,7 +609,7 @@ header {
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .elephant-img {
       display: none; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .elephant-img {
       display: none; } }
   @media only screen and (min-width: 1026px) {
@@ -622,7 +638,7 @@ header {
   .page-text p {
     line-height: 17px;
     margin-bottom: 30px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .page-text {
       padding: 90px; } }
   @media only screen and (min-width: 1026px) {
@@ -650,7 +666,7 @@ header {
   position: relative;
   background-color: whitesmoke;
   padding: 30px 0; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .awards-div {
       padding: 60px 0; } }
   @media only screen and (min-width: 1026px) {
@@ -662,7 +678,7 @@ header {
   position: relative; }
   .awards-page-text p {
     line-height: 1.5; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .awards-page-text {
       padding: 60px 90px; } }
   @media only screen and (min-width: 1026px) {
@@ -711,7 +727,7 @@ header {
     padding: 0 30px;
     font-size: 17px;
     line-height: 1.5; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .about-alex {
       padding: 0; } }
   @media only screen and (min-width: 1026px) {
@@ -840,7 +856,7 @@ header {
     margin-bottom: -60px;
     margin-top: -120px;
     margin-left: -100px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .alex-photo-pottery {
       width: 80%; }
       .alex-photo-pottery img {
@@ -862,7 +878,7 @@ header {
   margin: 0 auto; }
   .alex-photo img {
     margin-bottom: -90px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .alex-photo {
       width: 50%;
       margin-left: 25vw; } }
@@ -952,7 +968,7 @@ header {
       background-position: center;
       background-image: url("images/background_leaves_800.jpg");
       padding: 60px 15px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .portfolio-div {
       background-image: url("images/background_leaves_800.jpg");
       background-color: white;
@@ -987,7 +1003,7 @@ header {
     text-decoration: none; }
   .slider button:focus {
     outline: none; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .slider {
       width: 80vw;
       height: 80vw; } }
@@ -1036,7 +1052,7 @@ header {
 .slide-text {
   text-align: center;
   margin-bottom: -60px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .slide-text {
       right: 90px; } }
 
@@ -1060,7 +1076,7 @@ header {
   margin-left: 20px; }
   .video-link img {
     width: 150px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .video-link {
       margin-left: 0; } }
 
@@ -1130,7 +1146,7 @@ header {
       width: 150px;
       height: 150px;
       padding: 15px; } }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .shop-page-text {
       padding: 90px; }
       .shop-page-text iframe {
@@ -1162,7 +1178,7 @@ header {
     -webkit-box-pack: center;
     justify-content: center;
     -ms-flex-pack: center; } }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 450px) {
   .iframe-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1188,7 +1204,7 @@ header {
     justify-content: center;
     -ms-flex-pack: center; } }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 450px) {
   h1.map-h2 {
     margin-top: 0; } }
 @media only screen and (min-width: 1026px) {
@@ -1198,7 +1214,7 @@ header {
 
 h2.map-h2 {
   margin-bottom: 15px; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     h2.map-h2 {
       margin-bottom: 30px;
       text-align: center; } }
@@ -1222,7 +1238,7 @@ footer {
     line-height: 20px; }
   footer ul li:last-of-type h2 {
     padding-bottom: 0; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     footer {
       height: 211px; } }
 
@@ -1236,7 +1252,7 @@ footer {
   -webkit-box-pack: space-around;
   justify-content: space-around;
   -ms-flex-pack: space-around; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
     .footer-div {
       padding: 30px 90px; } }
   @media only screen and (min-width: 1026px) {
