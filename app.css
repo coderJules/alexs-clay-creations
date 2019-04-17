@@ -145,9 +145,13 @@ nav {
       margin-top: 0; } }
 
 .transparent-color {
-  background-color: rgba(70, 70, 70, 0.9);
-  -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3);
-  box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3); }
+  background: #136a8a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #267871, #136a8a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 1; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .transparent-color {
       background-color: transparent;
@@ -159,9 +163,13 @@ nav {
       background-color: transparent; } }
 
 .background-color {
-  background-color: rgba(70, 70, 70, 0.9);
-  -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3);
-  box-shadow: 1px 1px 3px rgba(1, 1, 1, 0.3); }
+  background: #136a8a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #267871, #136a8a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: t; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .background-color {
       background-color: transparent;
@@ -313,14 +321,35 @@ nav {
       margin-left: auto;
       position: absolute; } }
 
+.inline-banner {
+  position: fixed;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  margin-top: -90px;
+  background-size: cover;
+  object-fit: cover;
+  margin-right: -30px; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .inline-banner {
+      height: 100vh; } }
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
+    .inline-banner {
+      height: 66vh;
+      margin-right: 0; } }
+  @media only screen and (min-width: 961px) and (orientation: landscape) {
+    .inline-banner {
+      height: 100vh; } }
+  @media only screen and (min-width: 1026px) {
+    .inline-banner {
+      height: 100vh; } }
+
 header {
-  background-image: url("images/banner_image.jpg");
   position: relative;
   z-index: -2;
   padding-top: 90px;
   height: calc(100vh - 90px);
   width: 100%;
-  background-size: cover;
   margin-right: -30px; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     header {
@@ -331,7 +360,6 @@ header {
       margin-right: 0; } }
   @media only screen and (min-width: 961px) and (orientation: landscape) {
     header {
-      background-image: url("images/banner_image.jpg");
       height: calc(100vh - 70px); } }
   @media only screen and (min-width: 1026px) {
     header {
@@ -383,17 +411,18 @@ header {
 .tan-box {
   background-color: transparent;
   width: 70%;
-  margin-left: 15px;
   position: relative;
-  margin-top: 25px;
-  z-index: -5; }
+  z-index: 30;
+  margin: 0 auto; }
   .tan-box h1 {
+    padding-top: 0;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 1.5px;
     position: relative;
     z-index: 20;
-    line-height: 40px; }
+    line-height: 50px;
+    color: white; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .tan-box {
       margin: auto 0; } }
@@ -459,19 +488,22 @@ header {
   width: 80vw;
   padding: 15px; }
 
-@media only screen and (min-width: 768px) and (min-height: 450px) {
-  .dark-overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    opacity: .7;
-    background: #010101;
-    opacity: .7;
-    z-index: 999; } }
-@media only screen and (min-width: 1026px) {
-  .dark-overlay {
-    height: 100%; } }
+.dark-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #136a8a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #267871, #136a8a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: 0;
+  opacity: .7; }
+  @media only screen and (min-width: 1026px) {
+    .dark-overlay {
+      height: 100%; } }
 
 .video-banner-text {
   display: none; }
@@ -479,7 +511,7 @@ header {
     .video-banner-text {
       display: unset;
       width: 100%;
-      height: 66vh;
+      height: calc(66vh + 90px);
       position: absolute;
       top: 0;
       display: -webkit-box;
@@ -502,16 +534,17 @@ header {
         font-size: 62px;
         font-weight: 100;
         letter-spacing: 8.5px;
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.9);
         text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.1);
         width: 100%;
         padding: 0 0 30px 0;
         line-height: 48px; }
       .video-banner-text h2 {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.7);
         width: 40%;
-        font-size: 22px;
-        font-family: "Merriweather", serif;
+        font-size: 16px;
+        letter-spacing: .5px;
+        font-family: "Questrial", sans-serif;
         margin: 0 auto;
         font-weight: 100;
         line-height: 40px; } }
@@ -546,6 +579,12 @@ header {
   padding-left: 0;
   position: relative;
   z-index: 10; }
+  .banner-text h1 {
+    color: white; }
+  .banner-text h2 {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 30px;
+    letter-spacing: .7px; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .banner-text {
       display: none; } }
@@ -602,7 +641,6 @@ header {
       display: none; } }
 
 .elephant-img {
-  content: url("images/elephant_homepage_400.png");
   width: 65%;
   margin-top: -45px;
   margin-left: 33%; }
@@ -634,7 +672,8 @@ header {
   -ms-flex-pack: center; }
   .page-text h1 {
     margin-bottom: 30px;
-    text-align: center; }
+    text-align: center;
+    color: white; }
   .page-text p {
     line-height: 17px;
     margin-bottom: 30px; }

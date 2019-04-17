@@ -445,9 +445,10 @@ hr {
 }
 
 .transparent-color {
-  background-color: $darkgray;
-   -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
-          box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  background: #136a8a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+opacity: 1;
   @include landscape {
     background-color: transparent;
     -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
@@ -460,9 +461,10 @@ hr {
 }
 
 .background-color {
-  background-color: $darkgray;
-   -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
-          box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+ background: #136a8a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+opacity: t;;
   @include landscape {
     background-color: transparent;
     -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
@@ -624,14 +626,38 @@ hr {
   }
 
 
+.inline-banner {
+  position: fixed;
+  z-index: -2;
+  height: 100vh;
+  width: 100%;
+  margin-top: -90px;
+  background-size: cover;
+  object-fit: cover;
+  margin-right: -30px;
+  @include landscape {
+    height: 100vh;
+  }
+  @include ipad {
+      height: 66vh;
+      margin-right: 0;
+    }
+    @include ipad-landscape {
+    height: 100vh;
+    }
+    @include xl {
+      height: 100vh;
+    }
+}
+
 header {
-  background-image: url('images/banner_image.jpg');
+  // background-image: url('images/Banner 2.jpg');
   position: relative;
   z-index: -2;
   padding-top: 90px;
   height: calc(100vh - 90px);
   width: 100%;
-  background-size: cover;
+  // background-size: cover;
   margin-right: -30px;
   @include landscape {
     height: calc(100vh - 70px);
@@ -641,7 +667,7 @@ header {
       margin-right: 0;
     }
      @include ipad-landscape {
-      background-image: url('images/banner_image.jpg');
+      // background-image: url('images/Banner 2.jpg');
     height: calc(100vh - 70px);
     }
     @include xl {
@@ -698,17 +724,21 @@ header {
 .tan-box {
   background-color: transparent;
   width: 70%;
-  margin-left: 15px;
   position: relative;
-  margin-top: 25px;
-  z-index: -5;
+  z-index: 30;
+  margin: 0 auto;
   h1 {
+    padding-top: 0;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 1.5px;
     position: relative;
     z-index: 20;
-    line-height: 40px;
+    line-height: 50px;
+    color: white;
+   }
+   h2 {
+
    }
    @include landscape {
     margin: auto 0;
@@ -798,16 +828,20 @@ header {
 }
 
 .dark-overlay {
-    @include ipad {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    opacity: .7;
-    background: rgba(1, 1, 1, 1);
+    // background: rgba(1, 80, 80, .5);
+    background: #136a8a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+      z-index: 0;
       opacity: .7;
-      z-index: 999;
-    }
   @include xl {
     height: 100%;
   }
@@ -825,7 +859,7 @@ header {
   @include ipad {
     display: unset;
     width: 100%;
-    height: 66vh;
+    height: calc(66vh + 90px);
     position: absolute;
     top: 0;
     @include flexbox() {
@@ -841,7 +875,7 @@ header {
       font-size: 62px;
       font-weight: 100;
       letter-spacing: 8.5px;
-      color: rgba(255, 255, 255, .7);
+      color: rgba(255, 255, 255, .9);
       text-shadow: 1px 1px 3px rgba(1, 1, 1, .1);
       // text-decoration: border rgba(1, 1, 1, 1);
       width: 100%;
@@ -849,10 +883,11 @@ header {
       line-height: 48px;
     }
     h2 {
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, .7);
       width: 40%;
-      font-size: 22px;
-      font-family: $font-content;
+      font-size: 16px;
+      letter-spacing: .5px;
+      font-family: $font-headers;
       margin: 0 auto;
       font-weight: 100;
       line-height: 40px;
@@ -896,6 +931,14 @@ header {
   padding-left: 0;
   position: relative;
   z-index: 10;
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: rgba(255, 255, 255, .9);
+    line-height: 30px;
+    letter-spacing: .7px;
+  }
   @include ipad {
     display: none;
     // font-size: 18px;
@@ -962,7 +1005,7 @@ header {
 }
 
 .elephant-img {
-  content: url('images/elephant_homepage_400.png');
+  // content: url('images/elephant_homepage_400.png');
   width: 65%;
   margin-top: -45px;
   margin-left: 33%;
@@ -985,6 +1028,7 @@ header {
   h1 {
     margin-bottom: 30px;
     text-align: center;
+    color: white;
   }
   p {
     line-height: 17px;
