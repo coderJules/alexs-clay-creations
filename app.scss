@@ -82,7 +82,7 @@ strong {
 
 // @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto+Condensed:300,400,700|Special+Elite');
 // @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet");
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400|Questrial');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Questrial');
 //VARIABLES
 
 $font-light-color: white;
@@ -93,8 +93,8 @@ $font-dark-color: rgba(70, 70, 70, .9);
 
 $font-navbar: 'Questrial', sans-serif;
 $font-headers: 'Questrial', sans-serif;
-$font-content: 'Merriweather', serif;
-$font-buttons: 'Merriweather', serif;
+$font-content: 'Open Sans', sans-serif;
+$font-buttons: 'Open Sans', sans-serif;
 $button-font-weight: 100;
 $button-letter-spacing: 1px;
 
@@ -111,19 +111,18 @@ $darkgray: rgba(70, 70, 70, .9);
  h1 {
   text-transform: capitalize;
     font-family: $font-headers;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 400;
-    color: $gold;
+    color: rgba(37, 120, 113, .9);
     padding-top: 60px;
-    letter-spacing: 3px;
-    line-height: 20px;
-    text-shadow: 1px 1px 3px rgba(70, 70, 70, 0.2);
-    font-family: $font-headers;
+    letter-spacing:2px;
+    line-height: 55px;
+    // text-shadow: 1px 1px 3px rgba(70, 70, 70, 0.2);
 }
 
 h2 {
   font-family: $font-headers;
-  font-size: 22px;
+  font-size: 24px;
   color: $font-dark-color;
   letter-spacing: .5px;
   font-weight: 400;
@@ -131,15 +130,15 @@ h2 {
 
 h3 {
     font-family: $font-content;
-    font-size: 14px;
+    font-size: 16px;
     color: $font-dark-color;
     letter-spacing: .5px;
     font-weight: 100;
 }
 p {
-  font-size: 17px;
+  font-size: 16px;
   font-family: $font-content;
-    color: $font-dark-color;
+    color: gray;
     letter-spacing: .5px;
     font-weight: 100;
 }
@@ -630,7 +629,7 @@ opacity: t;;
   position: fixed;
   z-index: -2;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin-top: -90px;
   background-size: cover;
   object-fit: cover;
@@ -649,6 +648,27 @@ opacity: t;;
       height: 100vh;
     }
 }
+
+.page-banner {
+  z-index: 6;
+  height: 100vh;
+  object-fit: cover;
+
+  @include landscape {
+    height: 100vh;
+  }
+  @include ipad {
+      height: 66vh;
+      margin-right: 0;
+    }
+    @include ipad-landscape {
+    height: 100vh;
+    }
+    @include xl {
+      height: 100vh;
+    }
+}
+
 
 header {
   // background-image: url('images/Banner 2.jpg');
@@ -1028,7 +1048,6 @@ header {
   h1 {
     margin-bottom: 30px;
     text-align: center;
-    color: white;
   }
   p {
     line-height: 17px;
@@ -1250,6 +1269,12 @@ header {
 .z-index-20 {
   position: relative;
   z-index: 20;
+  p:nth-child(0) {
+    z-index: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
 }
 
 .alex-photo-pottery {
