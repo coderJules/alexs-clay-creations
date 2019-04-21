@@ -98,7 +98,8 @@ p {
   font-family: "Open Sans", sans-serif;
   color: gray;
   letter-spacing: .5px;
-  font-weight: 100; }
+  font-weight: 100;
+  line-height: 24px; }
 
 a {
   text-decoration: none;
@@ -326,6 +327,7 @@ nav {
   width: 100vw;
   margin-top: -90px;
   background-size: cover;
+  -o-object-fit: cover;
   object-fit: cover;
   margin-right: -30px; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
@@ -504,7 +506,7 @@ header {
   width: 80vw;
   padding: 15px; }
 
-.dark-overlay {
+.gradient-overlay {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -518,7 +520,7 @@ header {
   z-index: 0;
   opacity: .7; }
   @media only screen and (min-width: 1026px) {
-    .dark-overlay {
+    .gradient-overlay {
       height: 100%; } }
 
 .video-banner-text {
@@ -718,8 +720,9 @@ header {
 
 .awards-div {
   position: relative;
-  background-color: whitesmoke;
-  padding: 30px 0; }
+  background: white; }
+  .awards-div h1 {
+    margin-top: 0; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .awards-div {
       padding: 60px 0; } }
@@ -771,6 +774,57 @@ header {
   @media only screen and (min-width: 1600) {
     .awards-page-text {
       padding: 200px; } }
+
+.module {
+  opacity: 0; }
+
+.come-in {
+  -webkit-transform: translateY(100px);
+  -ms-transform: translateY(100px);
+  transform: translateY(100px);
+  -webkit-animation: come-in 0.8s ease forwards;
+  animation: come-in 0.8s ease forwards; }
+
+.come-in:nth-child(odd) {
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s; }
+
+.already-visible {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-animation: none;
+  animation: none; }
+
+@-webkit-keyframes come-in {
+  visibility: visible;
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+@keyframes come-in {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+.big-div-about {
+  width: 100vw;
+  background-color: white; }
+
+.page-header {
+  text-align: center;
+  width: 100%; }
+
+.about-text {
+  margin: 30px 30px 60px 30px; }
+
+.page-image {
+  object-fit: cover;
+  width: 100vw;
+  margin-top: -5px; }
+
+.cards {
+  margin-bottom: 60px; }
 
 .about-alex {
   padding: 30px 0; }
@@ -959,7 +1013,14 @@ header {
 
 .award-image {
   width: 30%;
+  border-radius: 50%;
   position: relative;
+  background: #136a8a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #267871, #136a8a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 0 auto; }
   @media only screen and (min-width: 1026px) {
     .award-image {
@@ -986,7 +1047,7 @@ header {
       margin: 0 auto; } }
 
 .portfolio-div {
-  background-image: url("images/background_leaves_400.jpg");
+  background: white;
   position: relative;
   z-index: 30;
   text-align: center;
@@ -1283,7 +1344,7 @@ h2.map-h2 {
 
 footer {
   background-color: #464646;
-  height: 190px; }
+  height: auto; }
   footer h2 {
     font-family: "Open Sans", sans-serif;
     letter-spacing: 1.5px;
