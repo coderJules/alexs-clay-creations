@@ -20,8 +20,8 @@ window.onclick = function(o) {
     $(document).scroll(function() {
         $(this).scrollTop() < o.top ? ($(".mobile-dropdown-nav").addClass("transparent-color"), $(".mobile-dropdown-nav").removeClass("background-color")) : ($(".mobile-dropdown-nav").removeClass("transparent-color"), $(".mobile-dropdown-nav").addClass("background-color"))
     })
-}), $(document).ready(function() {
-    $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
+// }), $(document).ready(function() {
+//     $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
 });
 var slideIndex = 1;
 
@@ -87,6 +87,30 @@ win.scroll(function(event) {
     var el = $(el);
     if (el.visible(true)) {
       el.addClass("come-in");
+    }
+  });
+
+});
+
+//icon shake effect
+
+var wintwo = $(window);
+
+var allIcons = $(".icon");
+
+allIcons.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+    el.addClass("already-visible");
+  }
+});
+
+wintwo.scroll(function(event) {
+
+  allIcons.each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("shake");
     }
   });
 

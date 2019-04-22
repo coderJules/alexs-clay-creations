@@ -110,14 +110,13 @@ $darkgray: rgba(70, 70, 70, .9);
 
  h1 {
   text-transform: capitalize;
-    font-family: $font-headers;
-    font-size: 32px;
-    font-weight: 400;
-    color: rgba(37, 120, 113, .9);
-    padding-top: 60px;
-    letter-spacing:2px;
-    line-height: 55px;
-    // text-shadow: 1px 1px 3px rgba(70, 70, 70, 0.2);
+  font-family: $font-headers;
+  font-size: 32px;
+  font-weight: 400;
+  color: rgba(37, 120, 113, .9);
+  padding-top: 60px;
+  letter-spacing:2px;
+  line-height: 55px;
 }
 
 h2 {
@@ -722,79 +721,80 @@ header {
   }
 }
 
-.centered-box {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  top: calc(50vh - 50px);
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-    @include landscape {
-      top: calc(50vh);
-      margin-top: -70px;
-      z-index: 5;
-    }
-    @include ipad {
-      padding: 90px;
-    }
-    @include xl {
-      display: none;
-    }
-}
+// .centered-box
 
-.tan-box {
-  background-color: transparent;
-  width: 70%;
-  position: relative;
-  z-index: 30;
-  margin: 0 auto;
-  h1 {
-    padding-top: 0;
-    font-size: 50px;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    position: relative;
-    z-index: 20;
-    line-height: 50px;
-    color: white;
-   }
-   h2 {
+//   position: relative;
+//   top: 0;
+//   bottom: 0;
+//   top: calc(50vh - 50px);
+//   -webkit-transform: translateY(-50%);
+//       -ms-transform: translateY(-50%);
+//           transform: translateY(-50%);
+//     @include landscape {
+//       top: calc(50vh);
+//       margin-top: -70px;
+//       z-index: 5;
+//     }
+//     @include ipad {
+//       padding: 90px;
+//     }
+//     @include xl {
+//       display: none;
+//     }
+// }
 
-   }
-   @include landscape {
-    margin: auto 0;
-   }
-    @include ipad {
-      // font-size: 36px;
-      display: none;
-    }
-    @include xl {
-      display: none;
-    }
-}
+// .tan-box {
+//   background-color: transparent;
+//   width: 70%;
+//   position: relative;
+//   z-index: 30;
+//   margin: 0 auto;
+//   h1 {
+//     padding-top: 0;
+//     font-size: 50px;
+//     font-weight: 400;
+//     letter-spacing: 1.5px;
+//     position: relative;
+//     z-index: 20;
+//     line-height: 50px;
+//     color: white;
+//    }
+//    h2 {
 
-.video-div {
-  display: none;
-  @include ipad {
-    display: unset;
-    position: fixed;
-    margin-top: -90px;
-    width: 100vw;
-    height: 66vh;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
-    @include ipad-landscape {
-      display: unset;
-      height: 100vh;
-    }
-    @include xl {
-      display: unset;
-      height: 100vh;
-    }
-  }
-}
+//    }
+//    @include landscape {
+//     margin: auto 0;
+//    }
+//     @include ipad {
+//       // font-size: 36px;
+//       display: none;
+//     }
+//     @include xl {
+//       display: none;
+//     }
+// }
+
+// .video-div {
+//   display: none;
+//   @include ipad {
+//     display: unset;
+//     position: fixed;
+//     margin-top: -90px;
+//     width: 100vw;
+//     height: 66vh;
+//     z-index: -1;
+//     pointer-events: none;
+//     overflow: hidden;
+//     @include ipad-landscape {
+//       display: unset;
+//       height: 100vh;
+//     }
+//     @include xl {
+//       display: unset;
+//       height: 100vh;
+//     }
+//   }
+// }
 
 // .fade-in {
 //   @include ipad {
@@ -802,17 +802,17 @@ header {
 //   }
 // }
 
-.video-div iframe {
-   width: 100%;
-   height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-   min-height: 100vh;
-   min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   z-index: 3001;
-}
+// .video-div iframe {
+//    width: 100%;
+//    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+//    min-height: 100vh;
+//    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+//    position: absolute;
+//    top: 50%;
+//    left: 50%;
+//    transform: translate(-50%, -50%);
+//    z-index: 3001;
+// }
 
 //   @include ipad {
 //     position:relative;
@@ -854,97 +854,104 @@ header {
     height: 100%;
     position: absolute;
     top: 0;
-    // background: rgba(1, 80, 80, .5);
     background: #136a8a;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, from(#267871), to(#136a8a));
+    background: -webkit-linear-gradient(left, #267871, #136a8a);
+    background: -o-linear-gradient(left, #267871, #136a8a);
     background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-
-      z-index: 0;
-      opacity: .7;
+    z-index: 0;
+    opacity: .7;
   @include xl {
     height: 100%;
   }
-
-// background: #000000;  /* fallback for old browsers */
-// background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-// background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
 }
 
 .video-banner-text {
-  display: none;
-  @include ipad {
-    display: unset;
-    width: 100%;
-    height: calc(66vh + 90px);
-    position: absolute;
-    top: 0;
-    @include flexbox() {
-    }
-    @include align-items(center) {
-    }
-    @include justify-content(center) {
-    }
-    @include flex-wrap(wrap) {
-    }
-    z-index: 2000;
+  width: 100%;
+  height: calc(100vh - 90px);
+  position: absolute;
+  top: 90px;
+  @include flexbox() {
+  }
+  @include align-items(center) {
+  }
+  @include justify-content(center) {
+  }
+  @include flex-wrap(wrap) {
+  }
+  @include flex-direction(column) {
+  }
+  z-index: 2000;
+  .mobile-h1 {
     h1 {
-      font-size: 62px;
-      font-weight: 100;
-      letter-spacing: 8.5px;
-      color: rgba(255, 255, 255, .9);
-      text-shadow: 1px 1px 3px rgba(1, 1, 1, .1);
-      // text-decoration: border rgba(1, 1, 1, 1);
-      width: 100%;
-      padding: 0 0 30px 0;
-      line-height: 48px;
-    }
-    h2 {
-      color: rgba(255, 255, 255, .7);
-      width: 40%;
-      font-size: 16px;
-      letter-spacing: .5px;
-      font-family: $font-headers;
+      padding-top: 0;
+      font-size: 50px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      position: relative;
+      line-height: 50px;
+      color: white;
+      width: 70%;
       margin: 0 auto;
-      font-weight: 100;
+    }
+    @include ipad {
+      display: none;
+    }
+  }
+  .h-1-ipad-plus {
+    display: none;
+    @include ipad {
+      display: unset;
+      h1 {
+        padding-top: 0;
+        font-size: 50px;
+        font-weight: 400;
+        letter-spacing: 8px;
+        position: relative;
+        z-index: 20;
+        line-height: 50px;
+        color: white;
+        }
+      }
+    }
+  h2 {
+    color: rgba(255, 255, 255, .9);
+    width: 70%;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-family: $font-headers;
+    margin: 0 auto;
+    font-weight: 100;
+    line-height: 24px;
+    @include ipad {
+      text-align: center;
+      width: 66%;
+      line-height: 32px;
+    }
+    @include xl {
+      width: 40%;
       line-height: 40px;
     }
   }
+  @include ipad {
+    top: 0;
+    width: 40%;
+    height: calc(66vh + 90px);
+    font-size: 62px;
+    font-weight: 100;
+    letter-spacing: 8.5px;
+    // text-decoration: border rgba(1, 1, 1, 1);
+    width: 100%;
+    padding: 0 0 30px 0;
+    line-height: 48px;
+    }
+    @include xl {
+      height: 100vh;
+    }
   @include ipad-landscape {
     height: 100vh;
   }
-}
-
-.video-banner-text > div {
-  width: 100%;
-  height: 150px;
-  text-align: center;
-  @include ipad {
-  h2 {
-    width: 66%;
-    line-height: 32px;
-  }
-}
- h2 {
-  @include xl {
-    width: 40%;
-    line-height: 40px;
-    }
-  }
-}
-
-.border {
-    padding: 0 15px 60px 15px;
-    border: 3px solid rgba(70, 70, 70, 0.9);
-    width: 100%;
-    @include landscape {
-      border: 0 solid rgba(70, 70, 70, 0.9);
-    }
 }
 
 .banner-text {
@@ -984,64 +991,6 @@ header {
   margin-left: -150px;
   opacity: .2;
 }
-}
-
-.snake-img {
-  content: url('images/snake_homepage_400.png');
-  margin-bottom: -40px;
-  width: 65%;
-  @include landscape {
-    display: none;
-  }
-  @include ipad {
-    display: none;
-    // width: 45%;
-    // margin-bottom: 40px;
-  }
-  @include xl {
-    display: none;
-  }
-}
-
-.bear-img {
-  content: url("images/bear.png");
-  top: 23vh;
-  right: 0;
-  position: absolute;
-  z-index: 2;
-  width: 50%;
-  overflow-y: hidden;
-  @include landscape {
-    width: 30%;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-  }
-    @include ipad {
-      display: none;
-      // width: 30%;
-  }
-  @include xl {
-    display: none;
-  }
-}
-
-.elephant-img {
-  // content: url('images/elephant_homepage_400.png');
-  width: 65%;
-  margin-top: -45px;
-  margin-left: 33%;
-  @include landscape {
-    display: none;
-  }
-  @include ipad {
-    display: none;
-    // width: 45%;
-    // margin-top: 0;
-  }
-  @include xl {
-    display: none;
-  }
 }
 
 .page-text {
@@ -1090,9 +1039,12 @@ header {
   // padding: 30px 0;
   h1 {
     margin-top: 0;
+    margin-bottom: 0;
   }
   @include ipad {
-    padding: 60px 0;
+    .page-image {
+      width: 100vw;
+    }
   }
   @include xl {
   padding: 90px 0;
@@ -1144,7 +1096,7 @@ header {
 }
 
 .module {
-  opacity: 0;
+  opacity: .1;
 }
 
 .come-in {
@@ -1165,6 +1117,7 @@ header {
           transform: translateY(0);
   -webkit-animation: none;
           animation: none;
+          opacity: 1;
 }
 
 @-webkit-keyframes come-in {
@@ -1175,30 +1128,178 @@ header {
 @keyframes come-in {
   to { opacity:1; -webkit-transform: translateY(0); transform: translateY(0); }
 }
+
 // ------------------------------------
 
 .big-div-about {
   width: 100vw;
   background-color: white;
+  @include ipad {
+    @include flexbox() {
+    }
+    @include flex-wrap(wrap) {
+    }
+  }
 }
 
 .page-header {
   text-align: center;
   width: 100%;
+  @include ipad {
+    margin-top: -5px;
+    padding-bottom: 15px;
+    box-shadow: 0px 3px 3px rgba(1, 1, 1, .2);
+    h1 {
+      padding-top: 15px;
+    }
+  }
+}
+
+.page-header:nth-of-type(1) {
+  // margin-top: -5px;
 }
 
 .about-text {
   margin: 30px 30px 60px 30px;
+  @include ipad {
+    margin: 0;
+    width: 50vw;
+    @include flexbox() {
+    }
+    @include justify-content(center) {
+    }
+    p {
+      align-self: center;
+      margin: 0;
+      padding: 30px;
+    }
+  }
+}
+
+.one {
+  @include ipad {
+    @include order(2) {
+    }
+  }
+}
+
+.two {
+  @include ipad {
+    img {
+      margin-top: 0;
+    }
+    @include order(1) {
+    }
+  }
+}
+
+.three {
+  @include ipad {
+    @include order(3) {
+    }
+  }
+}
+
+.four {
+  @include ipad {
+    @include order(4) {
+    }
+  }
+}
+
+.five {
+  @include ipad {
+    @include order(5) {
+    }
+  }
+}
+
+.six {
+  @include ipad {
+    @include order(6) {
+    }
+  }
+}
+
+.seven {
+  @include ipad {
+    @include order(8) {
+    }
+  }
+}
+
+.eight {
+  width: 100vw;
+  @include ipad {
+    @include order(7) {
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 0px 3px 3px rgba(1, 1, 1, .2);
+    }
+   .cards {
+    margin-bottom: 0;
+   }
+  }
+}
+
+.nine {
+  @include ipad {
+    @include order(9) {
+    }
+  }
+}
+
+.ten {
+  @include ipad {
+    width: 100vw;
+    @include order(12) {
+    }
+   img {
+    width: 100%;
+   }
+  }
+}
+
+.eleven {
+  @include ipad {
+    @include order(11) {
+    }
+  }
+}
+
+.twelve {
+  @include ipad {
+    @include order(10) {
+    }
+  }
 }
 
 .page-image {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100vw;
   margin-top: -5px;
+  @include ipad {
+    border: 1px solid white;
+    box-sizing: border-box;
+    width: 50vw;
+    height: 50vw;
+    margin-top: -3px;
+  }
+}
+
+.big-div-about:nth-child(1) {
+  margin-top: 0;
 }
 
 .cards {
   margin-bottom: 60px;
+  @include ipad {
+    margin-bottom: 0;
+  }
 }
 
 .about-alex {
@@ -1276,6 +1377,9 @@ header {
   margin-bottom: 30px;
   margin-top: 30px;
   text-align: center;
+  @include ipad {
+   margin-bottom: 0;
+  }
   @include xl {
     margin-top: 0;
     font-size: 42px;
@@ -1333,93 +1437,19 @@ header {
 
 }
 
-.z-index-20 {
-  position: relative;
-  z-index: 20;
-  p:nth-child(0) {
-    z-index: 0;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-  }
-}
-
-.alex-photo-pottery {
-  position: relative;
-  z-index: 0;
-  img {
-    margin-bottom: -60px;
-    margin-top: -120px;
-    margin-left: -100px;
-  }
-  @include ipad {
-    width: 80%;
-  img {
-    margin-bottom: -90px;
-    margin-top: -160px;
-    margin-left: -100px;
-    margin-bottom: -90px;
-  }
-  }
-  // content: url("images/Alex_pic.png");
-  background-position: center;
-  width: 100%;
-  margin: 0 auto;
-  @include xl {
-    width: 28vw;
-    img {
-    margin-top: -100px;
-    margin-left: -100px;
-    margin-bottom: -40px;
-    }
-  }
-}
-
-
-.alex-photo {
-  img {
-    margin-bottom: -90px;
-  }
-  // content: url("images/Alex_pic.png");
-  background-position: center;
-  width: 80%;
-  margin: 0 auto;
-  @include ipad {
-    width: 50%;
-    margin-left: 25vw;
-  }
-  @include landscape {
-    width: 40%;
-    border: none;
-    display: block;
-    margin: 0 auto;
-  }
-  @include ipad-landscape {
-     width: 30vw;
-  }
-  // margin-bottom: 90px;
-  @include xl {
-    width: 20vw;
-    margin: 0 auto;
-    margin-bottom: 0;
-    margin-left: 10vw;
-  }
-}
-
 .award-image {
   width: 30%;
   border-radius: 50%;
-    // position: absolute;
-    // top: 0;
-    // right: 15px;
-    position: relative;
-    background: #136a8a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    margin: 0 auto;
+  position: relative;
+  background: #136a8a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0 auto;
+  box-shadow: 1px 3px 3px rgba(40, 40, 40, .7);
+  @include ipad {
+    width: 20%;
+  }
   @include xl {
-   width: 70%;
    margin: 0 auto;
   }
 }
@@ -1445,25 +1475,18 @@ header {
   }
 }
 
-
-
-
 //PORTFOLIO SECTION--------------------
 .portfolio-div {
   background: white;
   position: relative;
   z-index: 30;
   text-align: center;
-  // height: 100vh;
-  // min-height: 845px;
   padding: 60px 15px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
   h1 {
-    margin-left: 20px;
     text-align: center;
-    margin-bottom: 20px;
   }
   h2 {
     margin-top: 20px;
@@ -1492,82 +1515,47 @@ header {
     color: #2c3339;
     bottom: 10px;
   }
-  iframe {
-    margin: 0 auto;
-  }
   @include landscape {
-    background-position: center;
-    background-image: url("images/background_leaves_800.jpg");
     padding: 60px 15px;
   }
   @include ipad {
-    background-image: url("images/background_leaves_800.jpg");
-    background-color: white;
-    padding: 90px;
+    padding: 0;
     width: auto;
+    h1 {
+    margin-bottom: 0;
+    }
   }
   @include xl {
-    background-image: none;
     height: auto;
     min-height: 0;
   }
 }
 
-.black-box {
-  width: 80%;
-  height: 50px;
-  background-color: rgba(70, 70, 70, .9);
+.shake {
+  animation: shake 0.82s cubic-bezier(.10,.03,.8,.54) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-// .slideshow-container {
-//   /* line them up horizontally */
-//   @include flexbox() {
-//   }
-//   width: 90vw;
-//   /* allow for scrolling */
-//   overflow-x: auto;
-//   margin: 0 auto;
-//   /* make it smooth on iOS */
-//   -webkit-overflow-scrolling: touch;
-//   @include xl {
-//     // width: 45vw;
-//     // margin: 0 auto;
-//     width: auto;
-//     overflow-x: none;
-//     -webkit-overflow-scrolling: none;
-//     max-width: 1000px;
-//     position: relative;
-//     margin: auto;
-//   }
-// }
-// .slideshow-container > div {
-//   /* make sure the width is honored */
-//   -ms-flex-negative: 0;
-//       flex-shrink: 0;
-//   width: 70vw;
-//   height: auto;
-//   background-color: rgba(255, 255 ,255, .7);
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-//   // -webkit-box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
-//   //         box-shadow: 1px 1px 1px rgba(1, 1, 1, .1);
-//   -webkit-scroll-snap-points-x: repeat(90vw);
-//       -ms-scroll-snap-points-x: repeat(90vw);
-//           scroll-snap-points-x: repeat(90vw);
-//   -webkit-scroll-snap-type: mandatory;
-//       -ms-scroll-snap-type: mandatory;
-//           scroll-snap-type: mandatory;
-//   @include landscape {
-//     width: 50vw;
-//   }
-//   @include ipad {
-//     width: 60vw;
-//     height: 60vw;
-//   }
-//   @include xl {
-//     width: 35vw;
-//   height: auto;
-//   }
-// }
+  20%, 80% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(1px, 0, 0);
+  }
+}
+
 
 .slider {
   position: relative;
@@ -1610,8 +1598,6 @@ header {
     opacity: .3;
   }
 }
-
-
 
 //GALLERY IMAGES-----------------------
 
@@ -1713,29 +1699,6 @@ header {
     margin-left: 0;
   }
 }
-
-
-
-.iframes-video {
-  width: 80%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 90px;
-    @include ipad {
-      }
-    @include landscape {
-      padding-top: 154px;
-      margin-bottom: 60px;
-      }
-    @include xl {
-      width: 70%;
-    }
-  }
 
 #jungle-slide {
   h3, p {
