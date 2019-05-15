@@ -20,9 +20,10 @@ window.onclick = function(o) {
     $(document).scroll(function() {
         $(this).scrollTop() < o.top ? ($(".mobile-dropdown-nav").addClass("transparent-color"), $(".mobile-dropdown-nav").removeClass("background-color")) : ($(".mobile-dropdown-nav").removeClass("transparent-color"), $(".mobile-dropdown-nav").addClass("background-color"))
     })
-// }), $(document).ready(function() {
-//     $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
+}), $(document).ready(function() {
+    $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
 });
+
 var slideIndex = 1;
 
 function plusDivs(o) {
