@@ -1472,10 +1472,13 @@ header {
 
 .center {
   width: 100vw;
-  height: calc(100vh - 90px);
+  height: calc(50vh - 90px);
   @include flexbox() {
   }
   @include justify-content(center) {
+  }
+  @include ipad {
+    height: calc(100vh - 90px);
   }
 }
 

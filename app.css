@@ -991,7 +991,7 @@ header {
 
 .center {
   width: 100vw;
-  height: calc(100vh - 90px);
+  height: calc(50vh - 90px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1000,6 +1000,9 @@ header {
   -webkit-box-pack: center;
   justify-content: center;
   -ms-flex-pack: center; }
+  @media only screen and (min-width: 768px) and (min-height: 450px) {
+    .center {
+      height: calc(100vh - 90px); } }
 
 .blue-background {
   background-color: #126A89; }
