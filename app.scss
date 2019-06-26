@@ -84,6 +84,7 @@ strong {
 // @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet");
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Questrial');
 //VARIABLES
+ @import url("https://use.typekit.net/vhi6cmo.css");
 
 $font-light-color: white;
 $font-medium-color: #A9B4C0;
@@ -92,7 +93,8 @@ $font-dark-color: rgba(70, 70, 70, .9);
 
 
 $font-navbar: 'Questrial', sans-serif;
-$font-headers: 'Questrial', sans-serif;
+$font-headers: 'chelsea-market-pro', sans-serif;
+
 $font-content: 'Open Sans', sans-serif;
 $font-buttons: 'Open Sans', sans-serif;
 $button-font-weight: 100;
@@ -114,13 +116,13 @@ $darkgray: rgba(70, 70, 70, .9);
   font-size: 32px;
   font-weight: 400;
   color: rgba(37, 120, 113, .9);
-  padding-top: 60px;
   letter-spacing:2px;
   line-height: 55px;
+  padding-top: 0;
 }
 
 h2 {
-  font-family: $font-headers;
+  font-family: $font-content;
   font-size: 24px;
   color: $font-dark-color;
   letter-spacing: .5px;
@@ -155,6 +157,11 @@ a {
 hr {
   color: $font-dark-color;
 }
+
+.spacer {
+  height: 15px;
+}
+
 
 //MIXINS -----------------------------------
 //BUTTON MIXINS ---------------------------
@@ -354,7 +361,7 @@ hr {
   }
 }
 
-@mixin landscape {
+@mixin  landscape {
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     @content;
   }
@@ -419,7 +426,7 @@ hr {
     z-index: 302;
   }
 
-  .navbar-logo {
+.navbar-logo {
   position: absolute;
   left: 0;
   top: 15px;
@@ -452,6 +459,7 @@ opacity: 1;
     background-color: transparent;
     -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
           box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
+          // display: none;
   }
   @include ipad {
     display: unset;
@@ -468,15 +476,11 @@ opacity: t;;
     background-color: transparent;
     -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
           box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
-    display: none;
+    // display: none;
   }
   @include ipad {
     background-color: $darkgray;
   }
-}
-
-.landscape-color {
-  background-color: transparent;
 }
 
 .mobile-dropdown-nav {
@@ -498,10 +502,40 @@ opacity: t;;
     transition: 0.5s background-color ease;
     -webkit-box-shadow: none;
           box-shadow: none;
-        }
+    }
+  @include landscape {
+    display: none;
+  }
+  @include xl {
+    display: unset;
+  }
+}
+
+.mobile-dropdown-nav-landscape {
+  display: none;
+  @include landscape {
+  display: unset;
+  z-index: 60;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  // -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+  //         box-shadow: 1px 1px 3px rgba(1, 1, 1, .3);
+    @include flexbox() {
+    }
+    @include justify-content(space-between) {
+    }
+    a {
+      @include flexbox() {
+      }
+    }
+  }
 }
 
 .dropbtn {
+  position: relative;
+  z-index: 60;
+  color: white;
   background-color: transparent;
   padding: 30px;
   font-size: 16px;
@@ -510,10 +544,10 @@ opacity: t;;
   height: 30px;
   width: 40px;
   content:url("images/hamburger-menu.png");
-  @include align-self(right) {
-  }
+    @include align-self(right) {
+    }
     @include landscape {
-      background-color: slategray;
+      background-color: #126a89;
       padding: 19px 30px;
       height: 35px;
     }
@@ -525,10 +559,33 @@ opacity: t;;
     }
   }
 
+ // .dropbtn-landscape {
+ //  background-color: transparent;
+ //  padding: 30px;
+ //  font-size: 16px;
+ //  border: none;
+ //  cursor: pointer;
+ //  height: 30px;
+ //  width: 40px;
+ //  content:url("images/hamburger-menu.png");
+ //    @include align-self(right) {
+ //   }
+ //    @include landscape {
+ //      background-color: slategray;
+ //      padding: 19px 30px;
+ //      height: 35px;
+ //    }
+ //    @include ipad {
+ //      padding: 30px 30px 30px 30px;
+ //    }
+ //    @include xl {
+ //      display: none;
+ //    }
+ //  }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba(18, 106, 137, .7);
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -565,7 +622,7 @@ opacity: t;;
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: rgb(175, 191, 140);
+  background-color: rgb(38, 120, 113);
 }
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
@@ -626,6 +683,7 @@ opacity: t;;
 
 
 .inline-banner {
+  display: unset;
   position: fixed;
   z-index: -2;
   height: 100vh;
@@ -646,8 +704,26 @@ opacity: t;;
     height: 100vh;
     }
     @include xl {
+      display: none;
       height: 100vh;
     }
+}
+
+.large-banner {
+  display: none;
+  @include xl {
+  display: unset;
+  position: fixed;
+  z-index: -2;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -90px;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: -30px;
+      height: 100vh;
+  }
 }
 
 .page-banner {
@@ -694,22 +770,6 @@ header {
     @include xl {
       height: calc(100vh - 90px);
     }
-}
-
-.ipad-banner-bear {
-  display: hidden;
-  @include ipad {
-    display: unset;
-    content: url('images/bear_600.png');
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-    width: 250px;
-    z-index: -100;
-  }
-  @include xl {
-    display: none;
-  }
 }
 
 .no-background {
@@ -861,7 +921,7 @@ header {
     background: -o-linear-gradient(left, #267871, #136a8a);
     background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: 0;
-    opacity: .7;
+    opacity: .5;
   @include xl {
     height: 100%;
   }
@@ -920,9 +980,9 @@ header {
     width: 70%;
     font-size: 16px;
     letter-spacing: 2px;
-    font-family: $font-headers;
+    font-family: $font-content;
     margin: 0 auto;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 24px;
     @include ipad {
       text-align: center;
@@ -930,7 +990,7 @@ header {
       line-height: 32px;
     }
     @include xl {
-      width: 40%;
+      width: 75%;
       line-height: 40px;
     }
   }
@@ -939,7 +999,7 @@ header {
     width: 40%;
     height: calc(66vh + 90px);
     font-size: 62px;
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: 8.5px;
     // text-decoration: border rgba(1, 1, 1, 1);
     width: 100%;
@@ -989,8 +1049,21 @@ header {
   position: relative;
   margin-top: -175px;
   margin-left: -150px;
-  opacity: .2;
+  // opacity: .2;
 }
+}
+
+.mobile-ipad-about-alex {
+  @include xl {
+    display: none;
+  }
+}
+
+.large-about-alex {
+  display: none;
+  @include xl {
+    display: unset;
+  }
 }
 
 .page-text {
@@ -1029,14 +1102,11 @@ header {
 }
 
 .awards-div {
+  padding: 0;
   position: relative;
   background: white;
-  // background: #136a8a;  /* fallback for old browsers */
-  //   background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
-  //   background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  // padding: 30px 0;
   h1 {
+    padding-top: 0;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -1046,13 +1116,15 @@ header {
     }
   }
   @include xl {
-  padding: 90px 0;
-  height: auto;
+  .award {
+    height: auto;
+    }
   }
 }
 
 .awards-page-text {
   position: relative;
+  padding-top: 60px;
   p {
   line-height: 1.5;
 }
@@ -1060,7 +1132,7 @@ header {
     padding: 60px 90px;
   }
   @include xl {
-  background-color: whitesmoke;
+  background-color: white;
   padding: 0 90px;
   @include flexbox() {
   }
@@ -1071,10 +1143,11 @@ header {
   @include align-items(center) {
   }
   position: relative;
-  height: auto;
+  height: calc(100vh - 90px);
   margin: 0 auto;
   h1 {
     text-align: center;
+    font-size: 36px;
   }
   p {
     line-height: 17px;
@@ -1090,8 +1163,23 @@ header {
 }
 @include custom(1600) {
   padding: 200px;
-
+  }
 }
+
+#slideshow {
+    margin: 50px auto;
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+#slideshow > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .module {
@@ -1139,18 +1227,23 @@ header {
     @include flex-wrap(wrap) {
     }
   }
+  @include xl {
+    height: auto;
+  }
 }
 
 .page-header {
   text-align: center;
+  background-color: white;
   width: 100%;
+  z-index: 30;
+  position: relative;
+  box-shadow: 0px 3px 3px rgba(1, 1, 1, .2);
   @include ipad {
-    margin-top: -5px;
-    padding-bottom: 15px;
-    box-shadow: 0px 3px 3px rgba(1, 1, 1, .2);
-    h1 {
-      padding-top: 15px;
-    }
+    // margin-top: -5px;
+    // padding-bottom: 15px;
+  }
+  @include xl {
   }
 }
 
@@ -1174,20 +1267,22 @@ header {
   @include ipad {
     margin: 0;
     height: 50vw;
-    width: 42vw;
-    padding: 0 3vw;
+    width: 50vw;
+    box-sizing: border-box;
+    padding: 30px;
     p {
       align-self: center;
       margin: 0;
-      padding: 0 30px;
+      // padding: 0 30px;
     }
     h1:nth-of-type(1) {
-      margin-left: 30px;
+      // margin-left: 30px;
     }
 
   }
   @include xl {
     p {
+      box-sizing: none;
       padding: 30px;
     }
     h1:nth-of-type(1) {
@@ -1211,6 +1306,7 @@ header {
     width: 60vw;
     margin: 0 auto;
     height: calc(100vh - 90px);
+    min-height: 745px;
     @include order(1) {
     }
     h1 {
@@ -1218,6 +1314,34 @@ header {
     }
   }
 }
+
+.one-large {
+  @include flexbox() {
+    }
+    @include justify-content(center) {
+    }
+    margin: 0 auto;
+    height: calc(100vh - 90px);
+    h1 {
+      text-align: center;
+    }
+    a {
+      text-decoration: underline;
+    }
+    p {
+      margin: 5px;
+    }
+    @include xl {
+      @include justify-content(flex-start) {
+      }
+      height: calc(100vh - 90px);
+      min-height: 735px;
+      padding: 35px 0;
+      p {
+        padding-top: 0;
+      }
+    }
+  }
 
 .two {
   @include ipad {
@@ -1283,6 +1407,12 @@ header {
     margin-bottom: 0;
    }
   }
+  @include xl {
+      height: calc(100vh - 90px);
+      width: 66vw;
+      margin: 0 auto;
+      object-fit: cover;
+  }
 }
 
 .nine {
@@ -1331,8 +1461,55 @@ header {
   }
   @include xl {
     box-sizing: border-box;
-    padding: 30px;
+    margin-top: 0;
+    border: none;
   }
+}
+
+.page-image-three {
+  width: 50vw;
+}
+
+.center {
+  width: 100vw;
+  height: calc(100vh - 90px);
+  @include flexbox() {
+  }
+  @include justify-content(center) {
+  }
+}
+
+.blue-background {
+ background-color: #126A89;
+}
+
+.page-image-center-no-background {
+  width: 33.3vw;
+  margin: 0 auto;
+  border-top: 60px solid white;
+  border-bottom: 60px solid white;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page-image-center {
+  height: calc(100vh - 210px);
+  margin: 0 auto;
+  margin: 60px 0;
+  width: 33.3vw;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page-image-full-center {
+  width: 100vw;
+  margin: 0 auto;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+
 }
 
 .big-div-about:nth-child(1) {
@@ -1377,7 +1554,6 @@ header {
     @include justify-content(center) {
   }
     h1 {
-    font-size: 42px;
     letter-spacing: 4px;
     width: 100%;
   }
@@ -1426,7 +1602,6 @@ header {
   }
   @include xl {
     margin-top: 0;
-    font-size: 42px;
     letter-spacing: 4px;
     width: 100%;
     height: 5vw;
@@ -1529,7 +1704,6 @@ header {
   position: relative;
   z-index: 30;
   text-align: center;
-  padding: 60px 15px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
@@ -1564,7 +1738,7 @@ header {
     bottom: 10px;
   }
   @include landscape {
-    padding: 60px 15px;
+    // padding: 60px 15px;
   }
   @include ipad {
     padding: 0;
@@ -1579,37 +1753,13 @@ header {
   }
 }
 
-.shake {
-  animation: shake 0.82s cubic-bezier(.10,.03,.8,.54) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(1px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(1px, 0, 0);
-  }
-}
-
 
 .slider {
   position: relative;
   height: 90vw;
   margin: 0 auto;
   padding-bottom: 60px;
+  z-index: 0;
   button {
     position: absolute;
     width: 50px;
@@ -1743,6 +1893,7 @@ header {
   position: relative;
   margin-top: 15px;
   margin-left: 20px;
+  padding-bottom: 120px;
   @include ipad {
     margin-left: 0;
   }
@@ -1789,6 +1940,7 @@ header {
 .shop-page-text {
   background-color: white;
   padding: 30px;
+  z-index: 0;
   h1 {
     margin-bottom: 30px;
     margin-top: 30px;
@@ -1815,7 +1967,7 @@ header {
     }
  }
   @include xl {
-    background-color: whitesmoke;
+    background-color: white;
     background-image: url("images/fishswimmingdown.png");
     background-position: left;
     background-repeat: no-repeat;
@@ -1863,8 +2015,6 @@ h1.map-h2 {
     margin-top: 0;
   }
   @include xl {
-    margin-top: 30px;
-    font-size: 42px;
   }
 }
 
