@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Questrial");
+@import url("https://use.typekit.net/vhi6cmo.css");
 html, body {
   margin: 0;
   padding: 0; }
@@ -71,16 +72,16 @@ strong {
 
 h1 {
   text-transform: capitalize;
-  font-family: "Questrial", sans-serif;
+  font-family: "chelsea-market-pro", sans-serif;
   font-size: 32px;
   font-weight: 400;
   color: rgba(37, 120, 113, 0.9);
-  padding-top: 60px;
   letter-spacing: 2px;
-  line-height: 55px; }
+  line-height: 55px;
+  padding-top: 0; }
 
 h2 {
-  font-family: "Questrial", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 24px;
   color: rgba(70, 70, 70, 0.9);
   letter-spacing: .5px;
@@ -110,6 +111,9 @@ a {
 
 hr {
   color: rgba(70, 70, 70, 0.9); }
+
+.spacer {
+  height: 15px; }
 
 nav {
   position: fixed;
@@ -173,14 +177,10 @@ nav {
     .background-color {
       background-color: transparent;
       -webkit-box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
-      box-shadow: 1px 1px 3px rgba(1, 1, 1, 0);
-      display: none; } }
+      box-shadow: 1px 1px 3px rgba(1, 1, 1, 0); } }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .background-color {
       background-color: rgba(70, 70, 70, 0.9); } }
-
-.landscape-color {
-  background-color: transparent; }
 
 .mobile-dropdown-nav {
   position: relative;
@@ -203,8 +203,39 @@ nav {
       transition: 0.5s background-color ease;
       -webkit-box-shadow: none;
       box-shadow: none; } }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .mobile-dropdown-nav {
+      display: none; } }
+  @media only screen and (min-width: 1026px) {
+    .mobile-dropdown-nav {
+      display: unset; } }
+
+.mobile-dropdown-nav-landscape {
+  display: none; }
+  @media only screen and (max-height: 450px) and (orientation: landscape) {
+    .mobile-dropdown-nav-landscape {
+      display: unset;
+      z-index: 60;
+      position: relative;
+      width: 100%;
+      height: 90px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -webkit-box-pack: space-between;
+      justify-content: space-between;
+      -ms-flex-pack: space-between; }
+      .mobile-dropdown-nav-landscape a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
 
 .dropbtn {
+  position: relative;
+  z-index: 60;
+  color: white;
   background-color: transparent;
   padding: 30px;
   font-size: 16px;
@@ -220,7 +251,7 @@ nav {
   align-self: right; }
   @media only screen and (max-height: 450px) and (orientation: landscape) {
     .dropbtn {
-      background-color: slategray;
+      background-color: #126a89;
       padding: 19px 30px;
       height: 35px; } }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
@@ -232,7 +263,7 @@ nav {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: rgba(255, 255, 255, 0.7); }
+  background-color: rgba(18, 106, 137, 0.7); }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -264,7 +295,7 @@ nav {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #afbf8c; }
+  background-color: #267871; }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
@@ -321,6 +352,7 @@ nav {
       position: absolute; } }
 
 .inline-banner {
+  display: unset;
   position: fixed;
   z-index: -2;
   height: 100vh;
@@ -342,6 +374,23 @@ nav {
       height: 100vh; } }
   @media only screen and (min-width: 1026px) {
     .inline-banner {
+      display: none;
+      height: 100vh; } }
+
+.large-banner {
+  display: none; }
+  @media only screen and (min-width: 1026px) {
+    .large-banner {
+      display: unset;
+      position: fixed;
+      z-index: -2;
+      height: 100vh;
+      width: 100vw;
+      margin-top: -90px;
+      background-size: cover;
+      -o-object-fit: cover;
+      object-fit: cover;
+      margin-right: -30px;
       height: 100vh; } }
 
 .page-banner {
@@ -382,21 +431,6 @@ header {
   @media only screen and (min-width: 1026px) {
     header {
       height: calc(100vh - 90px); } }
-
-.ipad-banner-bear {
-  display: hidden; }
-  @media only screen and (min-width: 768px) and (min-height: 450px) {
-    .ipad-banner-bear {
-      display: unset;
-      content: url("images/bear_600.png");
-      position: absolute;
-      right: 30px;
-      bottom: 30px;
-      width: 250px;
-      z-index: -100; } }
-  @media only screen and (min-width: 1026px) {
-    .ipad-banner-bear {
-      display: none; } }
 
 .no-background {
   background-image: none;
@@ -442,7 +476,7 @@ header {
   background: linear-gradient(to right, #267871, #136a8a);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   z-index: 0;
-  opacity: .7; }
+  opacity: .5; }
   @media only screen and (min-width: 1026px) {
     .gradient-overlay {
       height: 100%; } }
@@ -505,9 +539,9 @@ header {
     width: 70%;
     font-size: 16px;
     letter-spacing: 2px;
-    font-family: "Questrial", sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0 auto;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 24px; }
     @media only screen and (min-width: 768px) and (min-height: 450px) {
       .video-banner-text h2 {
@@ -516,7 +550,7 @@ header {
         line-height: 32px; } }
     @media only screen and (min-width: 1026px) {
       .video-banner-text h2 {
-        width: 40%;
+        width: 75%;
         line-height: 40px; } }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .video-banner-text {
@@ -524,7 +558,7 @@ header {
       width: 40%;
       height: calc(66vh + 90px);
       font-size: 62px;
-      font-weight: 100;
+      font-weight: 400;
       letter-spacing: 8.5px;
       width: 100%;
       padding: 0 0 30px 0;
@@ -565,8 +599,17 @@ header {
       width: 700px;
       position: relative;
       margin-top: -175px;
-      margin-left: -150px;
-      opacity: .2; } }
+      margin-left: -150px; } }
+
+@media only screen and (min-width: 1026px) {
+  .mobile-ipad-about-alex {
+    display: none; } }
+
+.large-about-alex {
+  display: none; }
+  @media only screen and (min-width: 1026px) {
+    .large-about-alex {
+      display: unset; } }
 
 .page-text {
   background-color: white;
@@ -615,21 +658,23 @@ header {
       -ms-flex-pack: center; } }
 
 .awards-div {
+  padding: 0;
   position: relative;
   background: white; }
   .awards-div h1 {
+    padding-top: 0;
     margin-top: 0;
     margin-bottom: 0; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .awards-div .page-image {
       width: 100vw; } }
   @media only screen and (min-width: 1026px) {
-    .awards-div {
-      padding: 90px 0;
+    .awards-div .award {
       height: auto; } }
 
 .awards-page-text {
-  position: relative; }
+  position: relative;
+  padding-top: 60px; }
   .awards-page-text p {
     line-height: 1.5; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
@@ -637,7 +682,7 @@ header {
       padding: 60px 90px; } }
   @media only screen and (min-width: 1026px) {
     .awards-page-text {
-      background-color: whitesmoke;
+      background-color: white;
       padding: 0 90px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -655,10 +700,11 @@ header {
       -ms-flex-align: center;
       align-items: center;
       position: relative;
-      height: auto;
+      height: calc(100vh - 90px);
       margin: 0 auto; }
       .awards-page-text h1 {
-        text-align: center; }
+        text-align: center;
+        font-size: 36px; }
       .awards-page-text p {
         line-height: 17px;
         margin-bottom: 30px;
@@ -671,6 +717,20 @@ header {
   @media only screen and (min-width: 1600) {
     .awards-page-text {
       padding: 200px; } }
+
+#slideshow {
+  margin: 50px auto;
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); }
+
+#slideshow > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
 .module {
   opacity: .1; }
@@ -715,42 +775,107 @@ header {
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }
+  @media only screen and (min-width: 1026px) {
+    .big-div-about {
+      height: auto; } }
 
 .page-header {
   text-align: center;
-  width: 100%; }
-  @media only screen and (min-width: 768px) and (min-height: 450px) {
-    .page-header {
-      margin-top: -5px;
-      padding-bottom: 15px;
-      box-shadow: 0px 3px 3px rgba(1, 1, 1, 0.2); }
-      .page-header h1 {
-        padding-top: 15px; } }
+  background-color: white;
+  width: 100%;
+  z-index: 30;
+  position: relative;
+  box-shadow: 0px 3px 3px rgba(1, 1, 1, 0.2); }
 
 .about-text {
-  margin: 30px 30px 60px 30px; }
+  height: auto;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+  .about-text h1 {
+    padding-top: 0; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .about-text {
       margin: 0;
+      height: 50vw;
       width: 50vw;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -ms-flex-pack: center; }
+      box-sizing: border-box;
+      padding: 30px; }
       .about-text p {
         align-self: center;
-        margin: 0;
-        padding: 30px; } }
+        margin: 0; } }
+  @media only screen and (min-width: 1026px) {
+    .about-text p {
+      box-sizing: none;
+      padding: 30px; }
+    .about-text h1:nth-of-type(1) {
+      margin-left: 0; } }
 
 @media only screen and (min-width: 768px) and (min-height: 450px) {
   .one {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 2;
-    order: 2; } }
+    order: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -ms-flex-pack: center; } }
+@media only screen and (min-width: 1026px) {
+  .one {
+    width: 60vw;
+    margin: 0 auto;
+    height: calc(100vh - 90px);
+    min-height: 745px;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    order: 1; }
+    .one h1 {
+      text-align: center; } }
+
+.one-large {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  margin: 0 auto;
+  height: calc(100vh - 90px); }
+  .one-large h1 {
+    text-align: center; }
+  .one-large a {
+    text-decoration: underline; }
+  .one-large p {
+    margin: 5px; }
+  @media only screen and (min-width: 1026px) {
+    .one-large {
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+      -webkit-box-pack: flex-start;
+      justify-content: flex-start;
+      -ms-flex-pack: flex-start;
+      height: calc(100vh - 90px);
+      min-height: 735px;
+      padding: 35px 0; }
+      .one-large p {
+        padding-top: 0; } }
 
 @media only screen and (min-width: 768px) and (min-height: 450px) {
   .two {
@@ -759,6 +884,11 @@ header {
     order: 1; }
     .two img {
       margin-top: 0; } }
+@media only screen and (min-width: 1026px) {
+  .two {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    order: 2; } }
 
 @media only screen and (min-width: 768px) and (min-height: 450px) {
   .three {
@@ -804,6 +934,12 @@ header {
         box-shadow: 0px 3px 3px rgba(1, 1, 1, 0.2); }
       .eight .cards {
         margin-bottom: 0; } }
+  @media only screen and (min-width: 1026px) {
+    .eight {
+      height: calc(100vh - 90px);
+      width: 66vw;
+      margin: 0 auto;
+      object-fit: cover; } }
 
 @media only screen and (min-width: 768px) and (min-height: 450px) {
   .nine {
@@ -844,6 +980,54 @@ header {
       width: 50vw;
       height: 50vw;
       margin-top: -3px; } }
+  @media only screen and (min-width: 1026px) {
+    .page-image {
+      box-sizing: border-box;
+      margin-top: 0;
+      border: none; } }
+
+.page-image-three {
+  width: 50vw; }
+
+.center {
+  width: 100vw;
+  height: calc(100vh - 90px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+
+.blue-background {
+  background-color: #126A89; }
+
+.page-image-center-no-background {
+  width: 33.3vw;
+  margin: 0 auto;
+  border-top: 60px solid white;
+  border-bottom: 60px solid white;
+  background-size: cover;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.page-image-center {
+  height: calc(100vh - 210px);
+  margin: 0 auto;
+  margin: 60px 0;
+  width: 33.3vw;
+  background-size: cover;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.page-image-full-center {
+  width: 100vw;
+  margin: 0 auto;
+  background-size: cover;
+  -o-object-fit: cover;
+  object-fit: cover; }
 
 .big-div-about:nth-child(1) {
   margin-top: 0; }
@@ -879,7 +1063,6 @@ header {
       justify-content: center;
       -ms-flex-pack: center; }
       .about-alex h1 {
-        font-size: 42px;
         letter-spacing: 4px;
         width: 100%; }
       .about-alex p {
@@ -923,7 +1106,6 @@ header {
   @media only screen and (min-width: 1026px) {
     .award {
       margin-top: 0;
-      font-size: 42px;
       letter-spacing: 4px;
       width: 100%;
       height: 5vw;
@@ -973,6 +1155,11 @@ header {
       .award-box img {
         width: 40%;
         margin: 0 auto; } }
+    @media only screen and (min-width: 1026px) and (min-width: 1026px) {
+      .award-box img {
+        margin-top: 30px;
+        width: 25%; } }
+
   @media only screen and (min-width: 1281px) {
     .award-box {
       height: 450px; } }
@@ -1024,7 +1211,6 @@ header {
   position: relative;
   z-index: 30;
   text-align: center;
-  padding: 60px 15px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center; }
@@ -1052,9 +1238,6 @@ header {
     font-size: 15px;
     color: #2c3339;
     bottom: 10px; }
-  @media only screen and (max-height: 450px) and (orientation: landscape) {
-    .portfolio-div {
-      padding: 60px 15px; } }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     .portfolio-div {
       padding: 0;
@@ -1066,26 +1249,12 @@ header {
       height: auto;
       min-height: 0; } }
 
-.shake {
-  animation: shake 0.82s cubic-bezier(0.1, 0.03, 0.8, 0.54) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px; }
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0); }
-  20%, 80% {
-    transform: translate3d(1px, 0, 0); }
-  30%, 50%, 70% {
-    transform: translate3d(-1px, 0, 0); }
-  40%, 60% {
-    transform: translate3d(1px, 0, 0); } }
 .slider {
   position: relative;
   height: 90vw;
   margin: 0 auto;
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  z-index: 0; }
   .slider button {
     position: absolute;
     width: 50px;
@@ -1169,7 +1338,8 @@ header {
   z-index: 800;
   position: relative;
   margin-top: 15px;
-  margin-left: 20px; }
+  margin-left: 20px;
+  padding-bottom: 120px; }
   .video-link img {
     width: 150px; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
@@ -1204,14 +1374,15 @@ header {
     width: 100%;
     margin: 0 auto; }
   .info-slide h2 {
-    font-family: "Questrial", sans-serif;
+    font-family: "chelsea-market-pro", sans-serif;
     width: 40vw;
     margin: 0 auto;
     text-align: center; }
 
 .shop-page-text {
   background-color: white;
-  padding: 30px; }
+  padding: 30px;
+  z-index: 0; }
   .shop-page-text h1 {
     margin-bottom: 30px;
     margin-top: 30px;
@@ -1233,7 +1404,7 @@ header {
         height: 250px; } }
   @media only screen and (min-width: 1026px) {
     .shop-page-text {
-      background-color: whitesmoke;
+      background-color: white;
       background-image: url("images/fishswimmingdown.png");
       background-position: left;
       background-repeat: no-repeat;
@@ -1285,10 +1456,6 @@ header {
 @media only screen and (min-width: 768px) and (min-height: 450px) {
   h1.map-h2 {
     margin-top: 0; } }
-@media only screen and (min-width: 1026px) {
-  h1.map-h2 {
-    margin-top: 30px;
-    font-size: 42px; } }
 
 h2.map-h2 {
   margin-bottom: 15px; }
@@ -1318,7 +1485,7 @@ footer {
     padding-bottom: 0; }
   @media only screen and (min-width: 768px) and (min-height: 450px) {
     footer {
-      height: 211px; } }
+      height: auto; } }
 
 .footer-div {
   padding: 20px;

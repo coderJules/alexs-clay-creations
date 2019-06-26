@@ -6,6 +6,7 @@ function myFunction() {
 
 function myFunction() {
     document.getElementById("myDropdownHome").classList.toggle("show")
+    document.getElementById("myDropdownHomeLandscape").classList.toggle("show")
 }
 window.onclick = function(o) {
     if (!o.target.matches(".dropbtn")) {
@@ -18,11 +19,13 @@ window.onclick = function(o) {
 }, $(document).ready(function() {
     var o = $(".about-text").offset();
     $(document).scroll(function() {
+        $(this).scrollTop() < o.top ? ($(".desktop-nav").addClass("transparent-color"), $(".desktop-nav").removeClass("background-color")) : ($(".desktop-nav").removeClass("transparent-color"), $(".desktop-nav").addClass("background-color"))
         $(this).scrollTop() < o.top ? ($(".mobile-dropdown-nav").addClass("transparent-color"), $(".mobile-dropdown-nav").removeClass("background-color")) : ($(".mobile-dropdown-nav").removeClass("transparent-color"), $(".mobile-dropdown-nav").addClass("background-color"))
     })
-// }), $(document).ready(function() {
-//     $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
+}), $(document).ready(function() {
+    $(window).width() < 500 && ($(".mobile-dropdown-nav").addClass("background-color"), $(".mobile-dropdown-nav").addClass("transparent-color"))
 });
+
 var slideIndex = 1;
 
 function plusDivs(o) {
@@ -92,26 +95,14 @@ win.scroll(function(event) {
 
 });
 
-//icon shake effect
+//large screensize slideshow
+$("#slideshow > div:gt(0)").hide();
 
-var wintwo = $(window);
-
-var allIcons = $(".icon");
-
-allIcons.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible");
-  }
-});
-
-wintwo.scroll(function(event) {
-
-  allIcons.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("shake");
-    }
-  });
-
-});
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  4000);
