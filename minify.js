@@ -17,7 +17,7 @@ window.onclick = function(o) {
         }
     }
 }, $(document).ready(function() {
-    var o = $(".about-text").offset();
+    var o = $(".about-text" || ".video-page").offset();
     $(document).scroll(function() {
         $(this).scrollTop() < o.top ? ($(".desktop-nav").addClass("transparent-color"), $(".desktop-nav").removeClass("background-color")) : ($(".desktop-nav").removeClass("transparent-color"), $(".desktop-nav").addClass("background-color"))
         $(this).scrollTop() < o.top ? ($(".mobile-dropdown-nav").addClass("transparent-color"), $(".mobile-dropdown-nav").removeClass("background-color")) : ($(".mobile-dropdown-nav").removeClass("transparent-color"), $(".mobile-dropdown-nav").addClass("background-color"))
@@ -32,12 +32,12 @@ function plusDivs(o) {
     showDivs(slideIndex += o)
 }
 
-function showDivs(o) {
-    var n, e = document.getElementsByClassName("mySlides");
-    for (o > e.length && (slideIndex = 1), o < 1 && (slideIndex = e.length), n = 0; n < e.length; n++) e[n].style.opacity = "0";
-    e[slideIndex - 1].style.opacity = "1"
-}
-showDivs(slideIndex);
+// function showDivs(o) {
+//     var n, e = document.getElementsByClassName("mySlides");
+//     for (o > e.length && (slideIndex = 1), o < 1 && (slideIndex = e.length), n = 0; n < e.length; n++) e[n].style.opacity = "0";
+//     e[slideIndex - 1].style.opacity = "1"
+// }
+// showDivs(slideIndex);
 
 //slide up photo's and text effect
 // check to see if the element is in the viewport

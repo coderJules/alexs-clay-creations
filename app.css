@@ -305,6 +305,7 @@ nav {
   display: none; }
   @media only screen and (min-width: 1026px) {
     .desktop-nav {
+      position: relative;
       display: unset;
       width: 100vw;
       height: 90px;
@@ -1222,7 +1223,7 @@ header {
   .portfolio-div h2 {
     margin-top: 20px;
     color: rgba(70, 70, 70, 0.9);
-    margin-bottom: 20px; }
+    margin-bottom: 30px; }
     @media only screen and (min-width: 1026px) {
       .portfolio-div h2 {
         text-align: center; } }
@@ -1250,91 +1251,34 @@ header {
   @media only screen and (min-width: 1026px) {
     .portfolio-div {
       height: auto;
-      min-height: 0; } }
+      min-height: 0; }
+      .portfolio-div h2 {
+        margin-top: 90px; } }
 
-.slider {
-  position: relative;
-  height: 90vw;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  z-index: 0; }
-  .slider button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border: none;
-    font-size: 30px;
-    color: slategray;
-    background: none; }
-  .slider button:hover {
-    opacity: .7;
-    text-decoration: none; }
-  .slider button:focus {
-    outline: none; }
-  @media only screen and (min-width: 768px) and (min-height: 450px) {
-    .slider {
-      width: 80vw;
-      height: 80vw; } }
-  @media only screen and (min-width: 1026px) {
-    .slider {
-      width: 600px;
-      height: 600px;
-      padding: 50px; } }
-
-.slide-info-div {
-  -webkit-align-self: middle;
-  -ms-align-self: middle;
-  -ms-flex-item-align: middle;
-  -ms-grid-row-align: middle;
-  align-self: middle;
-  margin-top: 15vh; }
-  .slide-info-div a:hover {
-    opacity: .3; }
-
-.mySlides {
-  height: auto;
-  opacity: 0;
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  -webkit-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  left: 0;
-  right: 0;
-  left-margin: auto;
-  right-margin: auto; }
-  .mySlides img {
-    width: 80%; }
-  @media only screen and (max-height: 450px) and (orientation: landscape) {
-    .mySlides {
-      padding: 30px; }
-      .mySlides img {
-        width: 60%; } }
-  @media only screen and (min-width: 1026px) {
-    .mySlides img {
-      width: 500px;
-      height: 500px; } }
-
-.slide-text {
-  text-align: center;
-  margin-bottom: -60px; }
-  @media only screen and (min-width: 768px) and (min-height: 450px) {
-    .slide-text {
-      right: 90px; } }
-
-.display-right {
-  right: 0;
-  top: 50%;
-  margin-top: -100px;
-  z-index: 4000; }
-
-.display-left {
-  left: 0;
-  top: 50%;
-  margin-top: -100px;
-  z-index: 4000; }
+.instagram-wrapper {
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .instagram-wrapper iframe {
+    -webkit-align-self: center;
+    -ms-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding-bottom: 90px;
+    width: 70% !important; }
 
 .video-link {
   margin: 0 auto;
@@ -1567,19 +1511,18 @@ footer {
   .copyright p {
     font-size: 12px; }
 
-.page-wrapper {
-  min-height: calc(100vh - 260px);
-  z-index: -10px;
-  background-color: black;
-  position: relative;
-  z-index: -400;
-  padding: 120px;
-  margin-top: -154px; }
-  @media only screen and (max-height: 450px) and (orientation: landscape) {
-    .page-wrapper {
-      height: 100vh; } }
-  @media only screen and (min-width: 1026px) {
-    .page-wrapper {
-      height: calc(100vh); } }
+.video-page {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
 
 /*# sourceMappingURL=app.css.map */

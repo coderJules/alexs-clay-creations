@@ -633,6 +633,7 @@ opacity: t;;
 
   display: none;
   @include xl {
+    position: relative;
     display: unset;
     width: 100vw;
     height: 90px;
@@ -680,7 +681,6 @@ opacity: t;;
       }
     }
   }
-
 
 .inline-banner {
   display: unset;
@@ -1717,7 +1717,7 @@ header {
     margin-top: 20px;
     // margin-left: 20px;
     color: $font-dark-color;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     @include xl {
       text-align: center;
     }
@@ -1753,118 +1753,137 @@ header {
   @include xl {
     height: auto;
     min-height: 0;
+    h2 {
+      margin-top: 90px;
+    }
   }
 }
 
-
-.slider {
-  position: relative;
-  height: 90vw;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  z-index: 0;
-  button {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    // padding: 20px;
-    border: none;
-    font-size: 30px;
-    color: slategray;
-    background: none;
+.instagram-wrapper {
+  width: 100%;
+  background-color: white;
+  @include flexbox() {
   }
-  button:hover {
-    opacity: .7;
-    text-decoration: none;
+  @include flex-direction(column) {
   }
-  button:focus {
-    outline: none;
+  @include justify-content(center) {
   }
-  @include ipad {
-  width: 80vw;
-  height: 80vw;
-  }
-  @include xl {
-    width: 600px;
-    height: 600px;
-    padding: 50px;
+  iframe {
+    @include align-self(center) {
+    }
+    padding-bottom: 90px;
+    width: 70% !important;
   }
 }
 
-.slide-info-div {
-  @include align-self(middle) {
-  }
-  margin-top: 15vh;
-  a:hover {
-    opacity: .3;
-  }
-}
+// .slider {
+//   position: relative;
+//   height: 90vw;
+//   margin: 0 auto;
+//   padding-bottom: 60px;
+//   z-index: 0;
+//   button {
+//     position: absolute;
+//     width: 50px;
+//     height: 50px;
+//     // padding: 20px;
+//     border: none;
+//     font-size: 30px;
+//     color: slategray;
+//     background: none;
+//   }
+//   button:hover {
+//     opacity: .7;
+//     text-decoration: none;
+//   }
+//   button:focus {
+//     outline: none;
+//   }
+//   @include ipad {
+//   width: 80vw;
+//   height: 80vw;
+//   }
+//   @include xl {
+//     width: 600px;
+//     height: 600px;
+//     padding: 50px;
+//   }
+// }
+
+// .slide-info-div {
+//   @include align-self(middle) {
+//   }
+//   margin-top: 15vh;
+//   a:hover {
+//     opacity: .3;
+//   }
+// }
 
 //GALLERY IMAGES-----------------------
 
-.mySlides {
-  height: auto;
-  opacity: 0;
-  z-index: 100;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
+// .mySlides {
+//   height: auto;
+//   opacity: 0;
+//   z-index: 100;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: absolute;
 
-  -webkit-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  left: 0;
-    right: 0;
-    left-margin: auto;
-    right-margin: auto;
-  img {
-    width: 80%;
-  }
-  @include landscape {
-    padding: 30px;
-    img {
-    width: 60%;
-    }
-  }
-  @include ipad {
-  }
-  @include xl {
-    img {
-      width: 500px;
-      height: 500px;
-    }
-  }
-}
+//   -webkit-transition: opacity 1s ease-in-out;
+//   -o-transition: opacity 1s ease-in-out;
+//   transition: opacity 1s ease-in-out;
+//   left: 0;
+//     right: 0;
+//     left-margin: auto;
+//     right-margin: auto;
+//   img {
+//     width: 80%;
+//   }
+//   @include landscape {
+//     padding: 30px;
+//     img {
+//     width: 60%;
+//     }
+//   }
+//   @include ipad {
+//   }
+//   @include xl {
+//     img {
+//       width: 500px;
+//       height: 500px;
+//     }
+//   }
+// }
 
-.slide-text {
-    // position: absolute;
-    // right: 0;
-    // left: 0;
-    // margin-right: auto;
-    // margin-left: auto;
-    // bottom: 30px;
-    text-align: center;
-    margin-bottom: -60px;
+// .slide-text {
+//     // position: absolute;
+//     // right: 0;
+//     // left: 0;
+//     // margin-right: auto;
+//     // margin-left: auto;
+//     // bottom: 30px;
+//     text-align: center;
+//     margin-bottom: -60px;
 
-    // padding: 30px;
-    @include ipad {
-     right: 90px;
-    }
-  }
+//     // padding: 30px;
+//     @include ipad {
+//      right: 90px;
+//     }
+//   }
 
-.display-right {
-  right: 0;
-  top: 50%;
-  margin-top: -100px;
-  z-index: 4000;
-}
+// .display-right {
+//   right: 0;
+//   top: 50%;
+//   margin-top: -100px;
+//   z-index: 4000;
+// }
 
-.display-left {
-  left: 0;
-  top: 50%;
-  margin-top: -100px;
-  z-index: 4000;
-}
+// .display-left {
+//   left: 0;
+//   top: 50%;
+//   margin-top: -100px;
+//   z-index: 4000;
+// }
 // .snake-slide {
 //   z-index: 100;
 //   background-position: center;
@@ -2136,24 +2155,13 @@ footer {
 
 //-------Video.html styles
 
-.page-wrapper {
-  min-height: calc(100vh - 260px);
-  // margin-bottom: -154px;
-  z-index: -10px;
-  background-color: black;
-  position: relative;
-  z-index: -400;
-  padding: 120px;
-  margin-top: -154px;
-  @include ipad {
-    // height: auto;
-    // margin-bottom: -90px;
+.video-page {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  background-color: white;
+  @include flexbox() {
   }
-   @include landscape {
-      height: 100vh;
-
-  }
-  @include xl {
-    height: calc(100vh);
+  @include justify-content(center) {
   }
 }
