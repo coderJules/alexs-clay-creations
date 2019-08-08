@@ -873,7 +873,7 @@ header {
       justify-content: flex-start;
       -ms-flex-pack: flex-start;
       height: calc(100vh - 90px);
-      min-height: 735px;
+      height: auto;
       padding: 45px 0; }
       .one-large p {
         padding-top: 0; } }

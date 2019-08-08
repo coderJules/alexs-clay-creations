@@ -1334,8 +1334,8 @@ header {
     @include xl {
       @include justify-content(flex-start) {
       }
-      height: calc(100vh - 90px);
-      min-height: 735px;
+      // height: calc(100vh - 90px);
+      height: auto;
       padding: 45px 0;
       p {
         padding-top: 0;
