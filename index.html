@@ -114,9 +114,11 @@
       <img src="images/three animals in a row.jpg" class="page-image">
     </div>
 
-    <div class="about-text module eleven">
 
-      <p> Now at 18, Alex has finished high school and is focusing on his art. In addition to the the benefit of being able to earn a small income from his art sales, art still remains a source of therapy for Alex. When busy working with his hands Alex finds enjoyment and relief from his anxiety.  </p>
+
+    <div class="about-text module eleven" id="age">
+
+      <p> Now at Alex has finished high school and is focusing on his art. In addition to the the benefit of being able to earn a small income from his art sales, art still remains a source of therapy for Alex. When busy working with his hands Alex finds enjoyment and relief from his anxiety.  </p>
 
     </div>
      <div class="module twelve">
@@ -131,14 +133,8 @@
         <h1>About Alex</h1>
       </div>
   <div class="big-div-about">
-    <div class="about-text module one-large">
-        <p>  Beginning at a young age, Alex was making animals out of playdough and silly puddy. With nimble fingers and focused concentration, Alex could turn a lifeless gray lump of silly puddy into a whimsical animal almost effortlessly.</p>
-        <p>
-        As Alex's skill matured, he began sculpting with polymer clay. These days he creates unique clay animals in his trademark style. Alex's work has received <a href="#awards">local and nationwide recognition.</a> While Alex's artistic accomplishments are remarkable in their own right, what makes his story more incredible is that Alex is autistic.
-        </p>
-        <p>
-        When he was a little over two and half years, Alex's mom, Angelina, learned her son had autism. What followed were years of love and support, helping Alex grow as a person, and making sure his love for art was always a part of his day. Whether it was an unlimited supply of art supplies, after school art classes or supportive school staff; Alex's passion and talent was able to blossom.</p>
-        <p> Now at 18, Alex has finished high school and is focusing on his art. In addition to the the benefit of being able to earn a small income from his art sales, art still remains a source of therapy for Alex. When busy working with his hands Alex finds enjoyment and relief from his anxiety.  </p>
+    <div class="about-text module one-large" id="agetext">
+
     </div>
 
     <div id="slideshow">
@@ -365,5 +361,27 @@
     <script src="https://use.fontawesome.com/releases/v5.0.6/js/fontawesome.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="minify.js"></script>
+    <script>
+       //calculate Alex's age and displays the most current age
+      var dob = new Date("10/03/1999");
+      var month_diff = Date.now() - dob.getTime();
+      var age_dt = new Date(month_diff);
+      var year = age_dt.getUTCFullYear();
+      var age = Math.abs(year - 1970);
+
+       document.getElementById("age").innerHTML = `<p> Now at ${age}, Alex has finished high school and is focusing on his art. In addition to the the benefit of being able to earn a small income from his art sales, art still remains a source of therapy for Alex. When busy working with his hands Alex finds enjoyment and relief from his anxiety.  </p>`;
+
+      //display the calculated age
+            document.getElementById("agetext").innerHTML = `<p>  Beginning at a young age, Alex was making animals out of playdough and silly puddy. With nimble fingers and focused concentration, Alex could turn a lifeless gray lump of silly puddy into a whimsical animal almost effortlessly.</p>
+        <p>
+        As Alex's skill matured, he began sculpting with polymer clay. These days he creates unique clay animals in his trademark style. Alex's work has received <a href="#awards">local and nationwide recognition.</a> While Alex's artistic accomplishments are remarkable in their own right, what makes his story more incredible is that Alex is autistic.
+        </p>
+        <p>
+        When he was a little over two and half years, Alex's mom, Angelina, learned her son had autism. What followed were years of love and support, helping Alex grow as a person, and making sure his love for art was always a part of his day. Whether it was an unlimited supply of art supplies, after school art classes or supportive school staff; Alex's passion and talent was able to blossom.</p>
+        <p> Now at ${age}, Alex has finished high school and is focusing on his art. In addition to the the benefit of being able to earn a small income from his art sales, art still remains a source of therapy for Alex. When busy working with his hands Alex finds enjoyment and relief from his anxiety.  </p>`; </script>
+
+
+  </script>
+
 
 </html>
